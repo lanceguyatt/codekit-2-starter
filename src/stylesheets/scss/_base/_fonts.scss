@@ -1,0 +1,95 @@
+// Compass Font Face
+
+// Provides a mixin to support @font-face
+// http://compass-style.org/reference/compass/css3/font_face/
+// http://compass-style.org/reference/compass/helpers/font-files/
+
+@include font-face(
+  'caecilia-bold',
+  font-files(
+    'caecilia-lt-std-bold.woff', woff,
+    'caecilia-lt-std-bold.ttf', truetype
+  ),
+  'caecilia-lt-std-bold.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'caecilia-bold-italic',
+  font-files(
+    'caecilia-lt-std-bold-italic.woff', woff,
+    'caecilia-lt-std-bold-italic.ttf', truetype
+  ),
+  'caecilia-lt-std-bold-italic.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'caecilia-italic',
+  font-files(
+    'caecilia-lt-std-italic.woff', woff,
+    'caecilia-lt-std-italic.ttf', truetype
+  ),
+  'caecilia-lt-std-italic.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'caecilia-light',
+  font-files(
+    'caecilia-lt-std-light.woff', woff,
+    'caecilia-lt-std-light.ttf', truetype
+  ),
+  'caecilia-lt-std-light.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'caecilia-light-italic',
+  font-files(
+    'caecilia-lt-std-light-italic.woff', woff,
+    'caecilia-lt-std-light-italic.ttf', truetype
+  ),
+  'caecilia-lt-std-light-italic.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'caecilia-roman',
+  font-files(
+    'caecilia-lt-std-roman.woff', woff,
+    'caecilia-lt-std-roman.ttf', truetype
+  ),
+  'caecilia-lt-std-roman.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'Fontello',
+  font-files(
+    'fontello.woff', woff,
+    'fontello.svg', svg,
+    'fontello.ttf', truetype
+  ),
+  'fontello.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  'Icomoon',
+  font-files(
+    'icomoon.woff', woff,
+    'icomoon.svg', svg,
+    'icomoon.ttf', truetype
+  ),
+  'icomoon.eot',
+  normal,
+  normal
+);

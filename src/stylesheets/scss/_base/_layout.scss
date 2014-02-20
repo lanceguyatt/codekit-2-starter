@@ -1,0 +1,26 @@
+@mixin padding-horizontal($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+.container {
+
+  @extend %center;
+  @extend %clearfix;
+  //background-color: red;
+  @include padding-horizontal($sm-grid-padding);
+
+  @include at-breakpoint($md-media-layout) {
+
+    //background-color: green;
+    padding-left: $md-grid-padding;
+    padding-right: $md-grid-padding;
+    @include set-container-width($md-total-columns);
+  }
+
+  @include at-breakpoint($lg-media-layout) {
+
+    //background-color: blue;
+    @include set-container-width($lg-total-columns);
+  }
+}

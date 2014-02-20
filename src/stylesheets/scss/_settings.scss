@@ -1,0 +1,107 @@
+// Vertical rhythm
+$base-font-size: 16px; // The base font size.
+$base-line-height: 8px; // The base line height determines the basic unit of vertical rhythm.
+$relative-font-sizing: false;
+
+// Text direction
+$text-direction: ltr;
+$default-float: left;
+$opposite-direction: right;
+$first: first;
+$last: last;
+
+@if $text-direction == ltr {
+
+  $default-float: left;
+  $opposite-direction: right;
+  $first: first;
+  $last: last;
+
+} @else {
+
+  $default-float: right;
+  $opposite-direction: left;
+  $first: last;
+  $last: first;
+
+}
+
+$white: #fff;
+$black: #000;
+$gray-dark: #292E26;
+$green: #B9BE10;
+$red: #ED2E38;
+$yellow: #F8E71C;
+$border-color: #D8D8D8;
+
+// Font families
+$museo-slab: "museo-slab", serif;
+$tahoma: Tahoma, Arial, sans-serif;
+$myriadPro: "Myriad Pro", sans-serif;
+$helvetica: "Helvetica", sans-serif;
+
+$caecilia-bold: 'caecilia-bold', serif;
+$caecilia-bold-italic: 'caecilia-bold-italic', serif;
+$caecilia-italic: 'caecilia-italic', serif;
+$caecilia-light: 'caecilia-light', serif;
+$caecilia-light-italic: 'caecilia-light-italic', serif;
+$caecilia-roman: 'caecilia-roman', serif;
+
+$avenir-bold: 'AvenirNext-Bold', 'Muli', Verdana, sans-serif;
+$avenir-demi: 'AvenirNext-DemiBold', 'Muli', Verdana, sans-serif;
+$avenir-next-condensed-medium: 'AvenirNextCondensed-Medium', 'Muli', Verdana, sans-serif;
+$avenir-next-condensed-demi-bold: 'AvenirNextCondensed-DemiBold', 'Muli', Verdana, sans-serif;
+$avenir-medium: 'AvenirNext-Medium', 'Muli', Verdana, sans-serif;
+$avenir-regular: 'AvenirNext-Regular', 'Muli', Verdana, sans-serif;
+
+// Scaffolding
+$base-background: $gray-dark !default;
+$base-font-color: #282D26 !default;
+$base-font-family: $caecilia-roman !default;
+$base-font-weight: 300 !default;
+$base-font-style: normal !default;
+
+// links
+$link-color: $red !default;
+$link-color-hover: darken($red, 20) !default;
+$hover: '&:focus, &:hover, &:active';
+
+// Susy
+$total-columns: 3;
+$column-width: 300px; // 300px
+$gutter-width: 60px; //
+$grid-padding: 20px;
+
+//$container-style: 'static';
+
+$sm-total-columns: $total-columns;
+$md-total-columns: $total-columns;
+$lg-total-columns: $total-columns;
+
+$sm-column-width: $column-width;
+$md-column-width: $column-width;
+$lg-column-width: $column-width;
+
+$sm-gutter-width: $gutter-width;
+$md-gutter-width: $gutter-width;
+$lg-gutter-width: $gutter-width;
+
+$sm-grid-padding: $grid-padding;
+$md-grid-padding: $grid-padding;
+$lg-grid-padding: $grid-padding;
+
+$sm-media-layout: $sm-total-columns; // (4 * 60px) + (3* 20px) + (2*10px) = 320px
+$sm-only-media-layout: $sm-total-columns 35.5625em; // max-width: 569px
+$md-media-layout: 700px $md-total-columns; // 561px
+//$lg-media-layout: 48.0625em $lg-total-columns; // 769px
+
+$from-direction: $default-float;
+$omega-float: $opposite-direction;
+
+@import 'susy';
+
+@import 'compass';
+@import 'compass/layout';
+//@import "compass/utilities/sprites";
+
+@import '_helpers/_mixins';

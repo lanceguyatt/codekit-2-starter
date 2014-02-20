@@ -1,0 +1,47 @@
+include ../_helpers/_variables
+include ../_helpers/_mixins
+
+block page
+
+  - name = 'Wilson Fletcher'
+
+!!!5
+html(class='no-js', lang='en', dir='ltr')
+  head
+    meta(charset='utf-8')
+
+    block title
+      title #{name}
+
+    block head
+      link(rel='stylesheet', href='stylesheets/css/style.css', media='all')
+
+    script(src='javascripts/vendor/modernizr.min.js')
+  body
+
+    header(role='banner', class='header')
+      div(class='container')
+        a(href='#')
+          img(src='images/wilson-fletcher@2x.png', width='283', height='16', alt='#{name} logo', class='brand')
+        nav(role='navigation', class='nav nav--main')
+          ul(class='nav__list')
+            each nav in nav_main
+              li(class='nav__item'): a(href='#{url}', class='nav__link') #{nav.name}
+
+    main(role='main', class='main')
+      block main
+
+    footer(role='contentinfo', class='footer')
+      div(class='container')
+        section(class='section section--footer')
+          div(class='section__header')
+            h1(class='section__name')
+              | Get in touch
+              span(class='tab')
+            mixin studio('London', '1 Old Nichol Street')
+            mixin studio('Sydney', '116 Chalmers Street')
+        p Copyright Wilson Fletcher 2014. All rights reserved.
+
+  block scripts
+
+
