@@ -1,8 +1,5 @@
 # CodeKit Starter
 
-Codekit Boilerplate
-===================
-
 Basic setup for [CodeKit](http://incident57.com/codekit/) based on my personal preferences for building responsive web sites. It features:
 
 * [CoffeeScript](http://coffeescript.org/)
