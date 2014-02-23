@@ -1,0 +1,58 @@
+// Vertical rhythm
+$base-font-size: 16px;
+$base-line-height: 8px;
+//$round-to-nearest-half-line: true;
+//$relative-font-sizing: false;
+
+// Text direction
+$text-direction: ltr;
+$default-float: left;
+$opposite-direction: opposite($default-float);
+
+@if $text-direction == ltr {
+  $default-float: left;
+  $opposite-direction: opposite($default-float);
+} @else {
+  $default-float: right;
+  $opposite-direction: opposite($default-float);
+}
+
+$white: #fff;
+$black: #000;
+
+// Scaffolding
+$base-background: $white;
+$base-font-color: #333;
+$base-font-family: "Helvetica", sans-serif;
+$base-font-weight: 300;
+$base-font-style: normal;
+
+// element helpers
+$headings: 'h1, h2, h3, h4, h5, h6';
+$foo: 'p, ul, ol, dl, table, pre';
+$elements-block: elements-of-type(block);
+$elements-inline: elements-of-type(inline);
+$elements-inline-block: elements-of-type(inline-block);
+
+// links
+$link-color: #4183c4 !default;
+$link-color-hover: darken($link-color, 20) !default;
+$hover: '&:focus, &:hover, &:active';
+@import 'compass';
+@import 'compass/layout';
+@import "compass/css3";
+
+// Susy
+$total-columns: 12;
+$column-width: rhythm(7.5);
+$gutter-width: rhythm(3);
+$grid-padding: rhythm(3);
+$from-direction: $default-float;
+$omega-float: $opposite-direction;
+@import '../vendor/susy';
+
+// Modular scale
+@import '../vendor/modular-scale';
+$ms-base: 14px;
+//$ms-ratio: $octave;
+

@@ -1,0 +1,101 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  direction: $text-direction;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: $base-background;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include adjust-font-size-to($base-font-size);
+}
+
+a {
+  @extend %break-word;
+  color: $link-color;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  @include transition(color .25s);
+
+  #{$hover} {
+    color: $link-color-hover;
+  }
+}
+
+// #{$headings} {
+//   background: green;
+// }
+
+h1 {
+  $font-size: 32px;
+  @include adjust-font-size-to($font-size);
+  @include margin-trailer(2, $font-size);
+}
+
+h2 {
+  $font-size: 24px;
+  @include adjust-font-size-to($font-size);
+  @include margin-trailer(2, $font-size);
+}
+
+h3 {
+  $font-size: 18px;
+  @include adjust-font-size-to($font-size);
+  @include margin-trailer(2, $font-size);
+}
+
+h4 {
+  $font-size: $base-font-size;
+  @include adjust-font-size-to($font-size);
+  @include margin-trailer(1, $font-size);
+}
+
+h5 {
+  $font-size: $base-font-size;
+  @include adjust-font-size-to($font-size);
+  @include margin-trailer(1, $font-size);
+}
+
+h6 {
+  $font-size: $base-font-size;
+  @include adjust-font-size-to($font-size);
+  @include margin-trailer(1, $font-size);
+}
+
+#{$foo} {
+  //background: pink;
+  @include margin-trailer(2);
+
+  @include at-breakpoint(8) {
+    @include margin-trailer(3);
+  }
+}
+
+ul, ol {
+  margin-#{$default-float}: rhythm(3);
+}
+
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+object,
+embed {
+  height: 100%;
+}
+
+hr {
+  display: none;
+}

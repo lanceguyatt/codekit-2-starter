@@ -1,0 +1,15 @@
+$legacy-support-for-ie: true;
+
+$breakpoint-media-output: false;
+$breakpoint-ie-output: true;
+$breakpoint-raw-output: true;
+
+@import 'all';
+
+// .lt-ie9 .container {
+//   min-width: columns(12, $total-columns, static); // min-width: 940px
+// }
+
+// .lt-ie7 .container {
+//   width: columns(12, $total-columns, static); // width: 940px
+// }

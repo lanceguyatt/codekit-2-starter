@@ -1,0 +1,15 @@
+@import 'globals/variables';
+@import 'globals/mixins';
+
+@import 'base/normalize';
+@import 'base/fonts';
+@import 'base/type';
+@import 'base/layout';
+
+@import 'vendor/hashgrid';
+
+@import 'globals/placeholders';
+
+.main {
+  @include margin-trailer(3);
+}

@@ -1,0 +1,10 @@
+.container {
+  //background-color: #ccc;
+  padding: rhythm(1);
+
+  @include at-breakpoint(6) {
+    padding: rhythm(3);
+    @include container(12);
+    @include padding-leader(3);
+  }
+}
