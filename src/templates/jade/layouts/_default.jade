@@ -23,7 +23,7 @@ head
 
   block title
 
-    title #{name} - #{site.name}
+    title #{name} — #{site.name}
 
   //- default meta
   meta(name='description', content='#{description}')
@@ -32,7 +32,7 @@ head
     meta(itemprop='name', content='#{name}')
     meta(itemprop='description', content='#{description}')
     meta(itemprop='url', content='#{url}')
-    meta(itemprop='image', content='#{url}#{image}')
+    meta(itemprop='image', content='#{site.url}#{image}')
 
   //- opengraph meta
     meta(property='og:site_name', content='#{site.name}')
@@ -41,7 +41,7 @@ head
     meta(property='og:title', content='#{name}')
     meta(property='og:description', content='#{description}')
     meta(property='og:url', content='#{url}')
-    meta(property='og:image', content='#{url}#{image}')
+    meta(property='og:image', content='#{site.url}#{image}')
 
   //- mobile meta
     meta(name='apple-mobile-web-app-capable', content='yes')
@@ -64,7 +64,7 @@ head
     meta(name='twitter:title', content='#{name}')
     meta(name='twitter:creator', content='#{author.twitter}')
     meta(name='twitter:description', content='#{description}')
-    meta(name='twitter:image:src', content='#{url}#{image}')
+    meta(name='twitter:image:src', content='#{site.url}#{image}')
 
   //- Google meta
     meta(name='google-site-verification', content='XXXXXXXXXXXX')
