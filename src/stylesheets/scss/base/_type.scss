@@ -16,7 +16,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @include adjust-font-size-to($base-font-size);
+  @include adjust-font-size-to(14px);
+
+  @include at-breakpoint(8) {
+    @include adjust-font-size-to(16px);
+  }
 }
 
 a {
@@ -30,10 +34,6 @@ a {
     color: $link-color-hover;
   }
 }
-
-// #{$headings} {
-//   background: green;
-// }
 
 h1 {
   $font-size: 32px;
@@ -72,15 +72,17 @@ h6 {
 }
 
 #{$foo} {
-  //background: pink;
   @include margin-trailer(2);
 
   @include at-breakpoint(8) {
-    @include margin-trailer(3);
+    $font-size: 16px;
+    @include adjust-font-size-to($font-size);
+    @include margin-trailer(3, $font-size);
   }
 }
 
-ul, ol {
+ul,
+ol {
   margin-#{$default-float}: rhythm(3);
 }
 
@@ -98,4 +100,9 @@ embed {
 
 hr {
   display: none;
+}
+
+.clearfix {
+  @extend %pie-clearfix;
+  position: relative;
 }

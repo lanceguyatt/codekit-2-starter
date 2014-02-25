@@ -1,6 +1,4 @@
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -140,8 +138,6 @@ dfn {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 0;
 }
@@ -323,8 +319,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -337,8 +331,6 @@ input[type="radio"] {
  *    (include `-moz` to future-proof).
  */
 input[type="search"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 2 */
   -webkit-appearance: none;
@@ -389,11 +381,13 @@ html {
 body {
   background-color: white;
   color: #333333;
-  font-family: "Helvetica", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 0.875em;
+  line-height: 1.71429em;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -402,9 +396,6 @@ a {
   color: #4183c4;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: color 0.25s;
-  -moz-transition: color 0.25s;
-  -o-transition: color 0.25s;
   transition: color 0.25s;
 }
 a:focus, a:hover, a:active {
@@ -449,10 +440,13 @@ h6 {
 
 p, ul, ol, dl, table, pre {
   margin-bottom: 1em;
+  font-size: 1em;
+  line-height: 1.5em;
   margin-bottom: 1.5em;
 }
 
-ul, ol {
+ul,
+ol {
   margin-left: 1.5em;
 }
 
@@ -472,22 +466,702 @@ hr {
   display: none;
 }
 
+.clearfix {
+  position: relative;
+}
+
 .container {
-  padding: 0.5em;
-  padding: 1.5em;
-  *zoom: 1;
-  max-width: 61.5em;
-  _width: 61.5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding: 1em;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1.5em;
+  padding: 1.5em;
+  max-width: 61.5em;
+  _width: 61.5em;
 }
-.container:after {
-  content: "";
-  display: table;
-  clear: both;
+
+.main {
+  margin-bottom: 1.5em;
+}
+
+.column {
+  background: #eee;
+  display: block !important;
+  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.lg-1-2 {
+  width: 41.66667%;
+  float: left;
+  margin-right: 16.66667%;
+  display: inline;
+}
+
+.lg-1-3 {
+  width: 26.31579%;
+  float: left;
+  margin-right: 10.52632%;
+  display: inline;
+}
+
+.lg-2-3 {
+  width: 63.15789%;
+  float: left;
+  margin-right: 10.52632%;
+  display: inline;
+}
+
+.lg-1-4 {
+  width: 19.23077%;
+  float: left;
+  margin-right: 7.69231%;
+  display: inline;
+}
+
+.lg-2-4 {
+  width: 46.15385%;
+  float: left;
+  margin-right: 7.69231%;
+  display: inline;
+}
+
+.lg-3-4 {
+  width: 73.07692%;
+  float: left;
+  margin-right: 7.69231%;
+  display: inline;
+}
+
+.lg-1-5 {
+  width: 15.15152%;
+  float: left;
+  margin-right: 6.06061%;
+  display: inline;
+}
+
+.lg-2-5 {
+  width: 36.36364%;
+  float: left;
+  margin-right: 6.06061%;
+  display: inline;
+}
+
+.lg-3-5 {
+  width: 57.57576%;
+  float: left;
+  margin-right: 6.06061%;
+  display: inline;
+}
+
+.lg-4-5 {
+  width: 78.78788%;
+  float: left;
+  margin-right: 6.06061%;
+  display: inline;
+}
+
+.lg-1-6 {
+  width: 12.5%;
+  float: left;
+  margin-right: 5%;
+  display: inline;
+}
+
+.lg-2-6 {
+  width: 30%;
+  float: left;
+  margin-right: 5%;
+  display: inline;
+}
+
+.lg-3-6 {
+  width: 47.5%;
+  float: left;
+  margin-right: 5%;
+  display: inline;
+}
+
+.lg-4-6 {
+  width: 65%;
+  float: left;
+  margin-right: 5%;
+  display: inline;
+}
+
+.lg-5-6 {
+  width: 82.5%;
+  float: left;
+  margin-right: 5%;
+  display: inline;
+}
+
+.lg-1-7 {
+  width: 10.6383%;
+  float: left;
+  margin-right: 4.25532%;
+  display: inline;
+}
+
+.lg-2-7 {
+  width: 25.53191%;
+  float: left;
+  margin-right: 4.25532%;
+  display: inline;
+}
+
+.lg-3-7 {
+  width: 40.42553%;
+  float: left;
+  margin-right: 4.25532%;
+  display: inline;
+}
+
+.lg-4-7 {
+  width: 55.31915%;
+  float: left;
+  margin-right: 4.25532%;
+  display: inline;
+}
+
+.lg-5-7 {
+  width: 70.21277%;
+  float: left;
+  margin-right: 4.25532%;
+  display: inline;
+}
+
+.lg-6-7 {
+  width: 85.10638%;
+  float: left;
+  margin-right: 4.25532%;
+  display: inline;
+}
+
+.lg-1-8 {
+  width: 9.25926%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-2-8 {
+  width: 22.22222%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-3-8 {
+  width: 35.18519%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-4-8 {
+  width: 48.14815%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-5-8 {
+  width: 61.11111%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-6-8 {
+  width: 74.07407%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-7-8 {
+  width: 87.03704%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+.lg-1-9 {
+  width: 8.19672%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-2-9 {
+  width: 19.67213%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-3-9 {
+  width: 31.14754%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-4-9 {
+  width: 42.62295%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-5-9 {
+  width: 54.09836%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-6-9 {
+  width: 65.57377%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-7-9 {
+  width: 77.04918%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-8-9 {
+  width: 88.52459%;
+  float: left;
+  margin-right: 3.27869%;
+  display: inline;
+}
+
+.lg-1-10 {
+  width: 7.35294%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-2-10 {
+  width: 17.64706%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-3-10 {
+  width: 27.94118%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-4-10 {
+  width: 38.23529%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-5-10 {
+  width: 48.52941%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-6-10 {
+  width: 58.82353%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-7-10 {
+  width: 69.11765%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-8-10 {
+  width: 79.41176%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-9-10 {
+  width: 89.70588%;
+  float: left;
+  margin-right: 2.94118%;
+  display: inline;
+}
+
+.lg-1-11 {
+  width: 6.66667%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-2-11 {
+  width: 16%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-3-11 {
+  width: 25.33333%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-4-11 {
+  width: 34.66667%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-5-11 {
+  width: 44%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-6-11 {
+  width: 53.33333%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-7-11 {
+  width: 62.66667%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-8-11 {
+  width: 72%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-9-11 {
+  width: 81.33333%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-10-11 {
+  width: 90.66667%;
+  float: left;
+  margin-right: 2.66667%;
+  display: inline;
+}
+
+.lg-1-12 {
+  width: 6.09756%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-2-12 {
+  width: 14.63415%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-3-12 {
+  width: 23.17073%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-4-12 {
+  width: 31.70732%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-5-12 {
+  width: 40.2439%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-6-12 {
+  width: 48.78049%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-7-12 {
+  width: 57.31707%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-8-12 {
+  width: 65.85366%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-9-12 {
+  width: 74.39024%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-10-12 {
+  width: 82.92683%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-11-12 {
+  width: 91.46341%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-1 {
+  width: 6.09756%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-2 {
+  width: 14.63415%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-3 {
+  width: 23.17073%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-4 {
+  width: 31.70732%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-5 {
+  width: 40.2439%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-6 {
+  width: 48.78049%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-7 {
+  width: 57.31707%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-8 {
+  width: 65.85366%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-9 {
+  width: 74.39024%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-10 {
+  width: 82.92683%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-11 {
+  width: 91.46341%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+}
+
+.lg-12 {
+  width: 100%;
+}
+
+.lg-push-1 {
+  margin-left: 8.53659%;
+}
+
+.lg-push-2 {
+  margin-left: 17.07317%;
+}
+
+.lg-push-3 {
+  margin-left: 25.60976%;
+}
+
+.lg-push-4 {
+  margin-left: 34.14634%;
+}
+
+.lg-push-5 {
+  margin-left: 42.68293%;
+}
+
+.lg-push-6 {
+  margin-left: 51.21951%;
+}
+
+.lg-push-7 {
+  margin-left: 59.7561%;
+}
+
+.lg-push-8 {
+  margin-left: 68.29268%;
+}
+
+.lg-push-9 {
+  margin-left: 76.82927%;
+}
+
+.lg-push-10 {
+  margin-left: 85.36585%;
+}
+
+.lg-push-11 {
+  margin-left: 93.90244%;
+}
+
+.lg-pull-1 {
+  margin-left: -8.53659%;
+}
+
+.lg-pull-2 {
+  margin-left: -17.07317%;
+}
+
+.lg-pull-3 {
+  margin-left: -25.60976%;
+}
+
+.lg-pull-4 {
+  margin-left: -34.14634%;
+}
+
+.lg-pull-5 {
+  margin-left: -42.68293%;
+}
+
+.lg-pull-6 {
+  margin-left: -51.21951%;
+}
+
+.lg-pull-7 {
+  margin-left: -59.7561%;
+}
+
+.lg-pull-8 {
+  margin-left: -68.29268%;
+}
+
+.lg-pull-9 {
+  margin-left: -76.82927%;
+}
+
+.lg-pull-10 {
+  margin-left: -85.36585%;
+}
+
+.lg-pull-11 {
+  margin-left: -93.90244%;
+}
+
+.omega,
+.lg-omega {
+  float: right;
+  margin-right: 0;
+  *margin-left: -1.5em;
+  display: inline;
+}
+
+.lg-centered {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: inline;
+  float: none !important;
+}
+
+.lg-uncentered {
+  margin-left: 0;
+  margin-right: 0;
+  display: inline;
+  float: left !important;
+}
+
+.lg-uncentered.opposite {
+  display: inline;
+  float: right !important;
+}
+
+.lg-text-left {
+  text-align: left !important;
+}
+
+.lg-text-right {
+  text-align: right !important;
+}
+
+.lg-text-center {
+  text-align: center !important;
 }
 
 #grid {
@@ -497,12 +1171,6 @@ hr {
   left: 50%;
 }
 
-/**
- * Vertical grid lines
- *
- * Set the column width taking the borders into consideration,
- * and use margins to set column gutters.
- */
 .vert {
   border: solid darkturquoise;
   border-width: 0 1px;
@@ -516,42 +1184,18 @@ hr {
   margin-left: 1.5em;
 }
 
-/**
- * Horizontal grid lines, defined by your base line height
- *
- * Remember, the CSS properties that define the box model:
- * visible height = height + borders + margins + padding
- */
 .horiz {
   height: 0.5em;
   border-bottom: 1px solid rgba(255, 0, 0, 0.75);
 }
 
-/**
-* Classes for multiple grids
-*
-* When using more than one grid, remember to set the numberOfGrids
-* option in the hashgrid.js file.
-*/
-#grid.grid-1 div.vert {
-  /* Vertical grid line colour for grid 1 */
-  border-color: darkturquoise;
-}
-
-#grid.grid-2 {
-  /* Adjustments */
-  padding: 0 160px;
-  width: 660px;
-}
-
-#grid.grid-2 div.vert {
-  /* Vertical grid line colour for grid 2 */
-  border-color: crimson;
-}
-
 .clearfix {
-  overflow: hidden;
   *zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 a {
@@ -560,7 +1204,5 @@ a {
   word-break: break-all;
   /* Non standard for webkit */
   word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   hyphens: auto;
 }

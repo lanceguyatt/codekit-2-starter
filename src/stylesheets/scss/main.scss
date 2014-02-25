@@ -1,4 +1,15 @@
 $legacy-support-for-ie: false;
+$legacy-support-for-mozilla: false;
+
+$experimental-support-for-mozilla: true;
+$experimental-support-for-webkit: true;
+$experimental-support-for-opera: false;
+$experimental-support-for-microsoft: false;
+$experimental-support-for-khtml: false;
+
+$support-for-original-webkit-gradients: true;
+$experimental-support-for-svg: true;
+$experimental-support-for-pie: false;
 
 $breakpoint-media-output: true;
 $breakpoint-ie-output: false;

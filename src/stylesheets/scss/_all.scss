@@ -6,10 +6,9 @@
 @import 'base/type';
 @import 'base/layout';
 
+@import 'components/grid';
+
 @import 'vendor/hashgrid';
 
 @import 'globals/placeholders';
 
-.main {
-  @include margin-trailer(3);
-}

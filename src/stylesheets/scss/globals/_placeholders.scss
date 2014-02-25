@@ -17,11 +17,7 @@
 }
 
 %clearfix {
-  @include clearfix;
-}
-
-.clearfix {
-  @extend %clearfix;
+  @include pie-clearfix;
 }
 
 %pie-clearfix {
