@@ -1,14 +1,14 @@
-@import 'globals/variables';
-@import 'globals/mixins';
+@import '_globals/_variables';
+@import '_globals/_mixins';
 
-@import 'base/normalize';
-@import 'base/fonts';
-@import 'base/type';
-@import 'base/layout';
+@import '_base/_normalize';
+@import '_base/_fonts';
+@import '_base/_type';
+@import '_base/_layout';
 
-@import 'components/grid';
+@import '_components/_grid';
 
-@import 'vendor/hashgrid';
+@import '_vendor/_hashgrid';
 
-@import 'globals/placeholders';
+@import '_globals/_placeholders';
 

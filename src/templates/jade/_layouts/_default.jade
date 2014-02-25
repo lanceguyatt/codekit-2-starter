@@ -1,5 +1,5 @@
-include ../globals/_variables
-include ../globals/_mixins
+include ../_globals/_variables
+include ../_globals/_mixins
 
 - name = site.name
 - description = site.description
@@ -31,7 +31,7 @@ head
   //- microdata meta
   meta(itemprop='name', content='#{name}')
   meta(itemprop='description', content='#{description}')
-  meta(itemprop='url', content='#{url}')
+  meta(itemprop='url', content='#{site.url}#{url}')
   meta(itemprop='image', content='#{site.url}#{image}')
 
   //- opengraph meta
@@ -40,7 +40,7 @@ head
     meta(property='og:type', content='#{type}')
     meta(property='og:title', content='#{name}')
     meta(property='og:description', content='#{description}')
-    meta(property='og:url', content='#{url}')
+    meta(property='og:url', content='#{site.url}#{url}')
     meta(property='og:image', content='#{site.url}#{image}')
 
   //- mobile meta
@@ -57,7 +57,7 @@ head
   //- Twitter card
     meta(name='twitter:card', content='summary')
     meta(name='twitter:site', content='#{author.twitter}')
-    meta(name='twitter:domain', content='#{url}')
+    meta(name='twitter:domain', content='#{site.url}#{url}')
     meta(name='twitter:title', content='#{name}')
     meta(name='twitter:creator', content='#{author.twitter}')
     meta(name='twitter:description', content='#{description}')
@@ -76,7 +76,7 @@ head
     <!--[if lte IE 9]><link rel="stylesheet" href="#{paths.css}/main-lt-ie9.min.css" media="all"><![endif]-->
     <!--[if gte IE 9]><!--><link rel="stylesheet" href="#{paths.css}/main.css" media="all"><!--<![endif]-->
 
-  script(src='#{paths.js}/vendor/modernizr.min.js')
+  script(src='#{paths.js}/modernizr.min.js')
   script
     document.write('<meta name="apple-mobile-web-app-title" content="#{site.name}">')
 
@@ -100,8 +100,7 @@ body(class='#{classes}')
 
   block scripts
 
-    script(src='#{paths.js}/vendor/jquery-1.10.2.min.js')
-    script(src='#{paths.js}/vendor/hashgrid.js')
+    script(src='#{paths.js}/vendor.min.js')
     script(src='#{paths.js}/main.js')
 
 </html>
