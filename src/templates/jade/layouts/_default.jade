@@ -1,6 +1,14 @@
 include ../globals/_variables
 include ../globals/_mixins
 
+- name = site.name
+- description = site.description
+- url = site.url
+- image = site.image
+- type = site.type
+- locale = site.locale
+- classes = ''
+
 block page
 
 <!DOCTYPE html>
@@ -8,31 +16,32 @@ block page
 <!--[if IE 7]><html class="no-js ie7 lt-ie9 lt-ie8" lang="#{site.lang}"><![endif]-->
 <!--[if IE 8]><html class="no-js ie8 lt-ie9" lang="#{site.lang}"><![endif]-->
 <!--[if IE 9]><html class="no-js ie9" lang="#{site.lang}"><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="#{site.lang}" dir="#{site.dir}"><!--<![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="#{site.lang}" dir="#{site.dir}" prefix="og: http://ogp.me/ns schema: http://schema.org/" itemscope itemtype="schema.org/WebPage"><!--<![endif]-->
 head
   meta(charset='utf-8')
   <!-- Copyright (c) #{site.copyrightYear} by #{author.name} (#{author.url}) -->
+
   block title
 
-    title #{site.name}
+    title #{name} - #{site.name}
 
   //- default meta
-  meta(name='description', content='#{site.description}')
+  meta(name='description', content='#{description}')
 
   //- microdata meta
-    meta(itemprop='name', content='#{site.name}')
-    meta(itemprop='description', content='#{site.description}')
-    meta(itemprop='url', content='#{site.url}')
-    meta(itemprop='image', content='#{site.image}')
+    meta(itemprop='name', content='#{name}')
+    meta(itemprop='description', content='#{description}')
+    meta(itemprop='url', content='#{url}')
+    meta(itemprop='image', content='#{url}#{image}')
 
   //- opengraph meta
     meta(property='og:site_name', content='#{site.name}')
-    meta(property='og:locale', content='#{site.locale}')
-    meta(property='og:type', content='#{site.type}')
-    meta(property='og:title', content='#{site.title}')
-    meta(property='og:description', content='#{site.description}')
-    meta(property='og:url', content='#{site.url}')
-    meta(property='og:image', content='#{site.image}')
+    meta(property='og:locale', content='#{locale}')
+    meta(property='og:type', content='#{type}')
+    meta(property='og:title', content='#{name}')
+    meta(property='og:description', content='#{description}')
+    meta(property='og:url', content='#{url}')
+    meta(property='og:image', content='#{url}#{image}')
 
   //- mobile meta
     meta(name='apple-mobile-web-app-capable', content='yes')
@@ -41,22 +50,21 @@ head
   meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
 
   //- iOS meta
-    meta(name='apple-mobile-web-app-title', content='#{site.name}')
+  meta(name='apple-mobile-web-app-title', content='#{site.name}')
 
   //- Microsoft meta
     meta(name='msapplication-window', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
     meta(name='msapplication-TileColor', content='#cccccc')
-    meta(name='msapplication-TileImage', content='#{site.url}/apple-touch-icon-144x144-precomposed.png')
+    meta(name='msapplication-TileImage', content='#{site.url}/apple-touch-icon-precomposed.png')
 
   //- Twitter card
     meta(name='twitter:card', content='summary')
     meta(name='twitter:site', content='#{author.twitter}')
-    meta(name='twitter:domain', content='#{site.url}')
-    meta(name='twitter:title', content='#{site.title}')
+    meta(name='twitter:domain', content='#{url}')
+    meta(name='twitter:title', content='#{name}')
     meta(name='twitter:creator', content='#{author.twitter}')
-    meta(name='twitter:creator:id', content='#{author.twitter_id}')
-    meta(name='twitter:description', content='#{site.description}')
-    meta(name='twitter:image:src', content='#{site.image}')
+    meta(name='twitter:description', content='#{description}')
+    meta(name='twitter:image:src', content='#{url}#{image}')
 
   //- Google meta
     meta(name='google-site-verification', content='XXXXXXXXXXXX')
@@ -64,7 +72,7 @@ head
   //- author
     link(rel='author', href='#{author.twitter}')
     link(rel='publisher', href='#{author.google}')
-  link(rel='author', href='humans.txt')
+  link(rel='author', href='#{url}humans.txt')
 
   block stylesheets
 
@@ -72,7 +80,7 @@ head
     <!--[if gte IE 9]><!--><link rel="stylesheet" href="#{paths.css}/main.css" media="all"><!--<![endif]-->
 
   script(src='#{paths.js}/vendor/modernizr-2.6.2.min.js')
-body
+body(class='#{classes}')
 
   div(class='container', role='document')
 
