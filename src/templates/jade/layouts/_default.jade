@@ -16,7 +16,7 @@ block page
 <!--[if IE 7]><html class="no-js ie7 lt-ie9 lt-ie8" lang="#{site.lang}"><![endif]-->
 <!--[if IE 8]><html class="no-js ie8 lt-ie9" lang="#{site.lang}"><![endif]-->
 <!--[if IE 9]><html class="no-js ie9" lang="#{site.lang}"><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="#{site.lang}" dir="#{site.dir}" prefix="og: http://ogp.me/ns schema: http://schema.org/" itemscope itemtype="schema.org/WebPage"><!--<![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="#{site.lang}" dir="#{site.dir}" prefix="og: http://ogp.me/ns schema: http://schema.org/" itemscope itemtype="http://schema.org/WebPage"><!--<![endif]-->
 head
   meta(charset='utf-8')
   <!-- Copyright (c) #{site.copyrightYear} by #{author.name} (#{author.url}) -->
@@ -29,10 +29,10 @@ head
   meta(name='description', content='#{description}')
 
   //- microdata meta
-    meta(itemprop='name', content='#{name}')
-    meta(itemprop='description', content='#{description}')
-    meta(itemprop='url', content='#{url}')
-    meta(itemprop='image', content='#{site.url}#{image}')
+  meta(itemprop='name', content='#{name}')
+  meta(itemprop='description', content='#{description}')
+  meta(itemprop='url', content='#{url}')
+  meta(itemprop='image', content='#{site.url}#{image}')
 
   //- opengraph meta
     meta(property='og:site_name', content='#{site.name}')
@@ -48,9 +48,6 @@ head
     meta(name='MobileOptimized', content='320')
     meta(name='HandheldFriendly', content='true')
   meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
-
-  //- iOS meta
-  meta(name='apple-mobile-web-app-title', content='#{site.name}')
 
   //- Microsoft meta
     meta(name='msapplication-window', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
@@ -79,7 +76,10 @@ head
     <!--[if lte IE 9]><link rel="stylesheet" href="#{paths.css}/main-lt-ie9.min.css" media="all"><![endif]-->
     <!--[if gte IE 9]><!--><link rel="stylesheet" href="#{paths.css}/main.css" media="all"><!--<![endif]-->
 
-  script(src='#{paths.js}/vendor/modernizr-2.6.2.min.js')
+  script(src='#{paths.js}/vendor/modernizr.min.js')
+  script
+    document.write('<meta name="apple-mobile-web-app-title" content="#{site.name}">')
+
 body(class='#{classes}')
 
   div(class='container', role='document')
@@ -98,10 +98,10 @@ body(class='#{classes}')
       footer(role='contentinfo', class='footer')
         p Copyright #{author.name} #{site.copyrightYear}. All rights reserved.
 
-block scripts
+  block scripts
 
-  script(src='#{paths.js}/vendor/jquery-1.10.2.min.js')
-  script(src='#{paths.js}/vendor/hashgrid.js')
-  script(src='#{paths.js}/main.js')
+    script(src='#{paths.js}/vendor/jquery-1.10.2.min.js')
+    script(src='#{paths.js}/vendor/hashgrid.js')
+    script(src='#{paths.js}/main.js')
 
 </html>
