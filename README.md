@@ -8,7 +8,7 @@ Basic bolierplate setup for [CodeKit](http://incident57.com/codekit/) featuring:
 * [Compass](http://compass-style.org/) [![Gem Version](https://badge.fury.io/rb/compass.png)](http://badge.fury.io/rb/compass)
 * [Hashgrid](https://github.com/dotjay/hashgrid) [![Bower version](https://badge.fury.io/bo/hashgrid.png)](http://badge.fury.io/bo/hashgrid)
 * [Jade](http://jade-lang/) [![NPM version](https://badge.fury.io/js/jade.png)](http://badge.fury.io/js/jade)
-* [Modernizr](http://modernizr.com/) [![Bower version](https://badge.fury.io/bo/modernizr.png)](http://badge.fury.io/bo/modernizr)
+* [Modernizr](http://modernizr.com/) 
 * [Modular Scale](https://github.com/Team-Sass/modular-scale/) [![Gem Version](https://badge.fury.io/rb/modular-scale.png)](http://badge.fury.io/rb/modular-scale)
 * [Sass](http://sass-lang.com/) [![Gem Version](https://badge.fury.io/rb/sass.png)](http://badge.fury.io/rb/sass)
 * [Susy](http://susy.oddbird.net/) [![Gem Version](https://badge.fury.io/rb/susy.png)](http://badge.fury.io/rb/susy)
