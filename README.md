@@ -6,7 +6,7 @@ Basic bolierplate setup for [CodeKit](http://incident57.com/codekit/) featuring:
 
 * [CoffeeScript](http://coffeescript.org/) [![NPM version](https://badge.fury.io/js/coffeescript.png)](http://badge.fury.io/js/coffeescript)
 * [Compass](http://compass-style.org/) [![Gem Version](https://badge.fury.io/rb/compass.png)](http://badge.fury.io/rb/compass)
-* [Hashgrid](https://github.com/dotjay/hashgrid) [![Bower version](https://badge.fury.io/bo/hashgrid.png)](http://badge.fury.io/bo/hashgrid)
+* [Hashgrid](https://github.com/dotjay/hashgrid)
 * [Jade](http://jade-lang/) [![NPM version](https://badge.fury.io/js/jade.png)](http://badge.fury.io/js/jade)
 * [Modernizr](http://modernizr.com/) 
 * [Modular Scale](https://github.com/Team-Sass/modular-scale/) [![Gem Version](https://badge.fury.io/rb/modular-scale.png)](http://badge.fury.io/rb/modular-scale)
