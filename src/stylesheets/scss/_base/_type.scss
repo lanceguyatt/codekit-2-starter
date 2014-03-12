@@ -18,17 +18,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @include adjust-font-size-to(14px);
 
-  @include at-breakpoint(8) {
+  //@include at-breakpoint(8) {
     @include adjust-font-size-to(16px);
-  }
+  //}
 }
 
 a {
   @extend %break-word;
   color: $link-color;
   text-decoration: none;
+  transition: color .25s;
   -webkit-tap-highlight-color: transparent;
-  @include transition(color .25s);
 
   #{$hover} {
     color: $link-color-hover;
@@ -74,16 +74,16 @@ h6 {
 #{$foo} {
   @include margin-trailer(2);
 
-  @include at-breakpoint(8) {
+  //@include at-breakpoint(8) {
     $font-size: 16px;
     @include adjust-font-size-to($font-size);
     @include margin-trailer(3, $font-size);
-  }
+  //}
 }
 
 ul,
 ol {
-  margin-#{$default-float}: rhythm(3);
+  margin-left: rhythm(3);
 }
 
 img,

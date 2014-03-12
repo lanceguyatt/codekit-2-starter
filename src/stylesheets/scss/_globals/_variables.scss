@@ -5,15 +5,15 @@ $base-line-height: 8px;
 
 // Text direction
 $text-direction: ltr;
-$default-float: left;
-$opposite-direction: right;
+// $default-float: left !global;
+// $opposite-direction: right;
 
 @if $text-direction == ltr {
-  $default-float: left;
-  $opposite-direction: right;
+  // $default-float: left;
+  // $opposite-direction: right;
 } @else {
-  $default-float: right;
-  $opposite-direction: left;
+  // $default-float: right;
+  // $opposite-direction: left;
 }
 
 $white: #fff;
@@ -49,14 +49,16 @@ $hover: '&:focus, &:hover, &:active';
 @import "compass/css3";
 
 // Susy
-$total-columns: 12;
-$column-width: rhythm(7.5);
-$gutter-width: rhythm(3);
-$grid-padding: rhythm(3);
+// $total-columns: 12;
+// $column-width: rhythm(7.5);
+// $gutter-width: rhythm(3);
+// $grid-padding: rhythm(3);
 
-$from-direction: $default-float;
-$omega-float: $opposite-direction;
+// $from-direction: $default-float;
+// $omega-float: $opposite-direction;
 
-@import '../_vendor/_susy';
+$lg: 12 (20px/60px);
+
+@import '../_vendor/susy';
 
 

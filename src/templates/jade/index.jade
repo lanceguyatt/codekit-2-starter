@@ -1,16 +1,21 @@
 extends _layouts/_default
 
-block page
+block vars
 
-  - name = 'Home'
-  - description = 'Home description'
+  - var name = 'Home'
+  - var description = 'Home description'
 
 block title
 
   title #{site.name} — #{name}
 
+block prepend meta
+
+  //- Google meta
+    meta(name='google-site-verification', content='XXXXXXXXXXXX')
+
 block main
 
   ul
-    li: a(href='styleguide.html') Styleguide
-    li: a(href='grid.html') Grid
+    li: a(href='/styleguide/') Styleguide
+    li: a(href='/grid/') Grid

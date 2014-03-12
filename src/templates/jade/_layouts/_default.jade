@@ -1,15 +1,15 @@
 include ../_globals/_variables
 include ../_globals/_mixins
 
-- name = site.name
-- description = site.description
-- url = site.url
-- image = site.image
-- type = site.type
-- locale = site.locale
-- classes = ''
+- var name = site.name
+- var description = site.description
+- var url = site.url
+- var image = site.image
+- var type = site.type
+- var locale = site.locale
+- var classes = ''
 
-block page
+block vars
 
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js ie6 lt-ie9 lt-ie8 lt-ie7" lang="#{site.lang}"><![endif]-->
@@ -26,21 +26,22 @@ head
     title #{name} — #{site.name}
 
   block meta
-    //- default meta
-    meta(name='description', content='#{description}')
 
-  //- microdata meta
-    meta(itemprop='name', content='#{name}')
-    meta(itemprop='description', content='#{description}')
+    //- default meta
+    meta(name='description', content=description)
+
+    //- microdata meta
+    meta(itemprop='name', content=name)
+    meta(itemprop='description', content=description)
     meta(itemprop='url', content='#{site.url}#{url}')
     meta(itemprop='image', content='#{site.url}#{image}')
   
     //- opengraph meta
-      meta(property='og:site_name', content='#{site.name}')
-      meta(property='og:locale', content='#{locale}')
-      meta(property='og:type', content='#{type}')
-      meta(property='og:title', content='#{name}')
-      meta(property='og:description', content='#{description}')
+      meta(property='og:site_name', content=site.name)
+      meta(property='og:locale', content=locale)
+      meta(property='og:type', content=type)
+      meta(property='og:title', content=name)
+      meta(property='og:description', content=description)
       meta(property='og:url', content='#{site.url}#{url}')
       meta(property='og:image', content='#{site.url}#{image}')
   
@@ -57,40 +58,41 @@ head
   
     //- Twitter card
       meta(name='twitter:card', content='summary')
-      meta(name='twitter:site', content='#{author.twitter}')
+      meta(name='twitter:site', content=author.twitter)
       meta(name='twitter:domain', content='#{site.url}#{url}')
-      meta(name='twitter:title', content='#{name}')
-      meta(name='twitter:creator', content='#{author.twitter}')
-      meta(name='twitter:description', content='#{description}')
+      meta(name='twitter:title', content=name)
+      meta(name='twitter:creator', content=author.twitter)
+      meta(name='twitter:description', content=description)
       meta(name='twitter:image:src', content='#{site.url}#{image}')
   
-    //- Google meta
-      meta(name='google-site-verification', content='XXXXXXXXXXXX')
+    mixin apple-touch-icons('', [57, 72, 76, 114, 120, 144, 152])
 
   block link
 
+    link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+
     //- author
-      link(rel='author', href='#{author.twitter}')
-      link(rel='publisher', href='#{author.google}')
-    link(rel='author', href='#{url}humans.txt')
+      link(rel='author', href=author.twitter)
+      link(rel='publisher', href=author.google)
+    link(rel='author', href='humans.txt')
 
   block stylesheets
 
     <!--[if lte IE 9]><link rel="stylesheet" href="#{paths.css}/main-lt-ie9.min.css" media="all"><![endif]-->
     <!--[if gte IE 9]><!--><link rel="stylesheet" href="#{paths.css}/main.css" media="all"><!--<![endif]-->
 
-  script(src='#{paths.js}/modernizr.min.js')
+  script(src='#{paths.js}/modernizr-min.js')
   script
     document.write('<meta name="apple-mobile-web-app-title" content="#{site.name}">')
 
-body(class='#{classes}')
+body(class=classes)
 
   div(class='container', role='document')
 
     block header
 
       header(role='banner', class='header')
-        h1: a(href='index.html') #{site.name}
+        h1: a(href='/')=site.name
 
     main(role='main', class='main')
 
@@ -103,7 +105,7 @@ body(class='#{classes}')
 
   block scripts
 
-    script(src='#{paths.js}/vendor.min.js')
-    script(src='#{paths.js}/main.js')
+    script(src='#{paths.js}/vendor-min.js')
+    script(src='#{paths.js}/main-min.js')
 
 </html>

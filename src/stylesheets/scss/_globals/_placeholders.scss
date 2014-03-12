@@ -9,11 +9,11 @@
 
 %unstyled {
   @extend %no-bullet;
-  margin-#{$default-float}: 0;
+  margin-left: 0;
 }
 
 %box-sizing-border-box {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 %clearfix {
@@ -30,9 +30,9 @@
   width: 100%;
 }
 
-%default-float {
-  @include float($default-float);
-}
+// %default-float {
+//   @include float($default-float);
+// }
 
 %inline-block {
   @include inline-block(middle);
@@ -44,7 +44,7 @@
 
 %hide-text {
   overflow: hidden;
-  text-align: $default-float;
+  //text-align: $default-float;
   text-indent: -119988px;
 }
 

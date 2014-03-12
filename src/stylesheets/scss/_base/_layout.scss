@@ -1,13 +1,7 @@
 .container {
-  //background-color: #ccc;
-  padding: rhythm(2);
-
-  @include at-breakpoint(6) {
-    margin-left: auto;
-    margin-right: auto;
-    padding: rhythm(3);
-    @include set-container-width(12);
-  }
+  @include gutters(3em inside);
+  @include layout($lg magic);
+  transform: rotate(30deg);
 }
 
 .main {

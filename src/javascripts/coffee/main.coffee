@@ -1,1 +1,3 @@
-grid = new hashgrid()
+jQuery ->
+
+  grid = new hashgrid
