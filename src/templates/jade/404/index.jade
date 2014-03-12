@@ -1,10 +1,11 @@
-extends _layouts/_default
+extends ../_layouts/_default
 
 block vars
 
   - var name = '404 page'
   - var description = 'Page not found'
+  - var url = '/404/'
 
 block main
 
-  p: a(href='index.html') Return to homepage
+  h1 Page not found

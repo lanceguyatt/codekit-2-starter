@@ -3,7 +3,7 @@ include ../_globals/_mixins
 
 - var name = site.name
 - var description = site.description
-- var url = site.url
+- var url = ''
 - var image = site.image
 - var type = site.type
 - var locale = site.locale
@@ -28,13 +28,13 @@ head
   block meta
 
     //- default meta
-    meta(name='description', content=description)
+      meta(name='description', content=description)
 
     //- microdata meta
     meta(itemprop='name', content=name)
     meta(itemprop='description', content=description)
     meta(itemprop='url', content='#{site.url}#{url}')
-    meta(itemprop='image', content='#{site.url}#{image}')
+    meta(itemprop='image', content='#{site.url}/#{image}')
   
     //- opengraph meta
       meta(property='og:site_name', content=site.name)
@@ -65,16 +65,16 @@ head
       meta(name='twitter:description', content=description)
       meta(name='twitter:image:src', content='#{site.url}#{image}')
   
-    mixin apple-touch-icons('', [57, 72, 76, 114, 120, 144, 152])
+    mixin apple-touch-icons('/', [57, 72, 76, 114, 120, 144, 152])
 
   block link
 
-    link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
 
     //- author
       link(rel='author', href=author.twitter)
       link(rel='publisher', href=author.google)
-    link(rel='author', href='humans.txt')
+    link(rel='author', href='/humans.txt')
 
   block stylesheets
 
@@ -82,7 +82,7 @@ head
     <!--[if gte IE 9]><!--><link rel="stylesheet" href="#{paths.css}/main.css" media="all"><!--<![endif]-->
 
   script(src='#{paths.js}/modernizr-min.js')
-  script
+  script.
     document.write('<meta name="apple-mobile-web-app-title" content="#{site.name}">')
 
 body(class=classes)
@@ -93,6 +93,13 @@ body(class=classes)
 
       header(role='banner', class='header')
         h1: a(href='/')=site.name
+
+    block nav_main
+
+      nav(role='navigation')
+        ul
+          each nav in nav_main
+            li: a(href=nav.url, class=nav.url === url ? 'active' : null)=nav.name
 
     main(role='main', class='main')
 

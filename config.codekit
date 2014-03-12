@@ -12,7 +12,7 @@
 		},
 	"\/dist\/404.html": {
 		"fileType": 8192,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/dist\/404.html",
 		"outputAbbreviatedPath": "No Output Path",
@@ -144,28 +144,15 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/dist\/grid\/index.html": {
-		"fileType": 8192,
+	"\/README.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/dist\/grid\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
-	"\/dist\/index.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/dist\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
-	"\/dist\/styleguide\/index.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/dist\/styleguide\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/README.md",
+		"outputAbbreviatedPath": "\/README.html",
 		"outputPathIsSetByUser": 0
 		},
 	"\/src\/bower\/backbone\/backbone.js": {
@@ -3530,13 +3517,13 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/src\/templates\/jade\/404.jade": {
+	"\/src\/templates\/jade\/404\/index.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/src\/templates\/jade\/404.jade",
-		"outputAbbreviatedPath": "\/dist\/404.html",
+		"inputAbbreviatedPath": "\/src\/templates\/jade\/404\/index.jade",
+		"outputAbbreviatedPath": "\/404\/index.html",
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0
 		},
@@ -3608,7 +3595,7 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "codekit-starter",
+	"displayValue": "codekit-2-starter",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-fry"
 	},

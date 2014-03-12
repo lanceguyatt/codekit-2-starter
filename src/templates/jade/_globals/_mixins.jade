@@ -1,7 +1,7 @@
 mixin apple-touch-icons(url, sizes)
 
   link(rel='apple-touch-icon', href='#{url}apple-touch-icon.png')
-  
+
   if sizes
     each size in sizes
       link(rel='apple-touch-icon', sizes='#{size}x#{size}', href='#{url}apple-touch-icon-#{size}x#{size}.png')

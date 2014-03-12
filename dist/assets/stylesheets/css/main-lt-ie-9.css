@@ -485,6 +485,10 @@ hr {
   margin-bottom: 1.5em;
 }
 
+a.active {
+  color: #265079;
+}
+
 .clearfix {
   *zoom: 1;
 }

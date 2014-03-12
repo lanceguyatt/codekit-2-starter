@@ -8,6 +8,10 @@
 
 @import '_components/_grid';
 
+a.active {
+  color: $link-color-hover;
+}
+
 //@import '_vendor/_hashgrid';
 
 @import '_globals/_placeholders';
