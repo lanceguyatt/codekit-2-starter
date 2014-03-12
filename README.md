@@ -12,5 +12,3 @@ Basic boilerplate setup for [CodeKit 2](http://incident57.com/codekit/) featurin
 * [Modernizr](http://modernizr.com/)
 * [Sass](http://sass-lang.com/)
 * [Susy 2](http://susy.oddbird.net/)
-
-
