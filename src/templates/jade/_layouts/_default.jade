@@ -43,7 +43,7 @@ head
       meta(property='og:title', content=name)
       meta(property='og:description', content=description)
       meta(property='og:url', content='#{site.url}#{url}')
-      meta(property='og:image', content='#{site.url}#{image}')
+      meta(property='og:image', content='#{site.url}/#{image}')
   
     //- mobile meta
       meta(name='apple-mobile-web-app-capable', content='yes')
@@ -63,7 +63,7 @@ head
       meta(name='twitter:title', content=name)
       meta(name='twitter:creator', content=author.twitter)
       meta(name='twitter:description', content=description)
-      meta(name='twitter:image:src', content='#{site.url}#{image}')
+      meta(name='twitter:image:src', content='#{site.url}/#{image}')
   
     mixin apple-touch-icons('/', [57, 72, 76, 114, 120, 144, 152])
 
@@ -97,9 +97,9 @@ body(class=classes)
     block nav_main
 
       nav(role='navigation')
-        ul
+        ul(class='nav nav--main')
           each nav in nav_main
-            li: a(href=nav.url, class=nav.url === url ? 'active' : null)=nav.name
+            li(class='nav__item'): a(href=nav.url, class='nav__link', class=nav.url === url ? 'active' : null)=nav.name
 
     main(role='main', class='main')
 

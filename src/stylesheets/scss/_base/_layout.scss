@@ -1,7 +1,7 @@
 .container {
-  @include gutters(3em inside);
-  @include layout($lg magic);
-  transform: rotate(30deg);
+  background-color: pink;
+  @include gutters(1.25em inside);
+  @include container(12 magic);
 }
 
 .main {

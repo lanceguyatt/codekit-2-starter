@@ -18,9 +18,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @include adjust-font-size-to(14px);
 
-  //@include at-breakpoint(8) {
+  @include breakpoint($lg) {
     @include adjust-font-size-to(16px);
-  //}
+  }
 }
 
 a {
@@ -33,6 +33,10 @@ a {
   #{$hover} {
     color: $link-color-hover;
   }
+}
+
+#{headings(all)} {
+  background-color: green;
 }
 
 h1 {

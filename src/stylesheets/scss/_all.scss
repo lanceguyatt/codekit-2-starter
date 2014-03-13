@@ -8,6 +8,14 @@
 
 @import '_components/_grid';
 
+.nav {
+  @include no-bullet;
+}
+
+.nav__item {
+  display: inline-block;
+}
+
 a.active {
   color: $link-color-hover;
 }

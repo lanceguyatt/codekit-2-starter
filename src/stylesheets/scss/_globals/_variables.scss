@@ -8,13 +8,13 @@ $text-direction: ltr;
 // $default-float: left !global;
 // $opposite-direction: right;
 
-@if $text-direction == ltr {
-  // $default-float: left;
-  // $opposite-direction: right;
-} @else {
-  // $default-float: right;
-  // $opposite-direction: left;
-}
+// @if $text-direction == ltr {
+//   $default-float: left;
+//   $opposite-direction: right;
+// } @else {
+//   $default-float: right;
+//   $opposite-direction: left;
+// }
 
 $white: #fff;
 $black: #000;
@@ -44,21 +44,31 @@ $link-color: #4183c4 !default;
 $link-color-hover: darken($link-color, 20) !default;
 $hover: '&:focus, &:hover, &:active';
 
-@import 'compass';
-@import 'compass/layout';
-@import "compass/css3";
 
 // Susy
-// $total-columns: 12;
-// $column-width: rhythm(7.5);
-// $gutter-width: rhythm(3);
-// $grid-padding: rhythm(3);
+$total-columns: 12;
+$column-width: 60px;
+$gutter-width: 20px;
 
 // $from-direction: $default-float;
 // $omega-float: $opposite-direction;
 
-$lg: 12 (20px/60px);
+$susy: (
+  columns: 12,
+  gutters: $gutter-width/$column-width,
+  column-width: $column-width
+);
 
+@import 'compass';
+@import 'compass/layout';
+@import "compass/css3";
 @import '../_vendor/susy';
+
+$breakpoint-to-ems: true;
+
+$md: 569px;
+$lg: 760px;
+
+@import '../_vendor/breakpoint';
 
 

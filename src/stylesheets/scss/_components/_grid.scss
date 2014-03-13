@@ -18,169 +18,169 @@
 // //   }
 // // }
 
-// .column {
-//   background: #eee;
-//   display: block !important;
-//   padding: rhythm(1);
-//   text-align: center;
-//   @include margin-trailer(2);
-
-//   @include at-breakpoint(8) {
-//     padding: rhythm(1);
-//     @include margin-trailer(3);
-//   }
-// }
+.node {
+  background-color: #eee;
+  text-align: center;
+  @include margin-trailer(2);
+  @include padding-leader(2);
+  @include padding-trailer(2);
+}
 
 // //
 // // Grid mixins
 // //
-// @mixin generate-grid($grid-id, $class: 'span', $total-columns: $total-columns, $column-width: $column-width, $gutter-width: $gutter-width) {
+@mixin generate-grid($grid-id, $class: 'span', $total-columns: $total-columns, $column-width: $column-width, $gutter-width: $gutter-width) {
 
-//   // Generate span clearfix i.e .large-1
-//   @for $i from 1 through $total-columns {
+  // Generate span clearfix i.e .large-1
+  @for $i from 1 through $total-columns {
 
-//     .#{$class}#{-$i} {
-//       @if $i == $total-columns {
-//         width: columns($i, $total-columns);
-//       } @else {
-//         @include span-columns($i, $total-columns);
-//       }
-//     }
-//   }
+    .#{$class}#{-$i} {
+      @if $i == $total-columns {
+        width: span($total-columns);
+      } @else {
+        @include span($i);
+      }
+    }
+  }
 
-//   // Generate push columns i.e .large-push-1
-//   @for $i from 1 through $total-columns - 1 {
-//     .#{$class}-push#{-$i} {
-//       @include push($i, $total-columns);
-//     }
-//   }
+  // // Generate push columns i.e .large-push-1
+  // @for $i from 1 through $total-columns - 1 {
+  //   .#{$class}-push#{-$i} {
+  //     @include push(#{$i} of #{$total-columns});
+  //   }
+  // }
 
-//   // Generate pull columns i.e .large-pull-1
-//   @for $i from 1 through $total-columns - 1 {
-//     .#{$class}-pull#{-$i} {
-//       @include pull($i, $total-columns);
-//     }
-//   }
+  // // // Generate pull columns i.e .large-pull-1
+  // @for $i from 1 through $total-columns - 1 {
+  //   .#{$class}-pull#{-$i} {
+  //     @include pull($i of $total-columns);
+  //   }
+  // }
 
-//   // Generate omega class i.e .large-omega
-//   .omega,
-//   .#{$class}-omega {
-//     @include omega;
-//   }
+  // Generate omega class i.e .large-omega
+  .omega,
+  .#{$class}-omega {
+    @include omega;
+  }
 
-//   // Generate show class i.e .large-show
-//   // .#{$size}-show {
-//   //   display: block;
-//   // }
+  // Generate show class i.e .large-show
+  // .#{$size}-show {
+  //   display: block;
+  // }
 
-//   // Generate hide class i.e large-hide
-//   // .#{$size}-hide {
-//   //   display: none;
-//   // }
+  // Generate hide class i.e large-hide
+  // .#{$size}-hide {
+  //   display: none;
+  // }
 
-//   // Generate centered class ie. large-centered
-//   .#{$class}-centered {
-//     margin-left: auto;
-//     margin-right: auto;
-//     position: relative;
-//     @include float('none !important');
-//   }
+  // Generate centered class ie. large-centered
+  // .#{$class}-centered {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   position: relative;
+  //   @include float('none !important');
+  // }
 
-//   // Generate centered class ie. large-uncentered
-//   .#{$class}-uncentered {
-//     margin-left: 0;
-//     margin-right: 0;
-//     @include float('#{$default-float} !important');
-//   }
+  // Generate centered class ie. large-uncentered
+  // .#{$class}-uncentered {
+  //   margin-left: 0;
+  //   margin-right: 0;
+  //   @include float('#{$default-float} !important');
+  // }
 
-//   // Generate centered class ie. large-uncentered.opposite
-//   .#{$class}-uncentered.opposite {
-//     @include float('#{$omega-float} !important');
-//   }
+  // Generate centered class ie. large-uncentered.opposite
+  // .#{$class}-uncentered.opposite {
+  //   @include float('#{$omega-float} !important');
+  // }
 
-//   .#{$class}-text-left {
-//     text-align: #{$default-float} !important;
-//   }
+  // .#{$class}-text-left {
+  //   text-align: #{$default-float} !important;
+  // }
 
-//   .#{$class}-text-right {
-//     text-align: #{$opposite-direction} !important;
-//   }
+  // .#{$class}-text-right {
+  //   text-align: #{$opposite-direction} !important;
+  // }
 
-//   .#{$class}-text-center {
-//     text-align: center !important;
-//   }
+  // .#{$class}-text-center {
+  //   text-align: center !important;
+  // }
 
-//   //@include generate-hashgrid($grid-id, $total-clearfix, $column-width, $gutter-width, $grid-padding);
-// }
+  //@include generate-hashgrid($grid-id, $total-clearfix, $column-width, $gutter-width, $grid-padding);
+}
 
-// @include at-breakpoint(6) {
+.media .node {
+  outline: 1px solid red;
+  @include gallery(2 of 6 magic);
+}
 
-//   .lg-1-2 { @include span-columns(1, 2); }
-//   .lg-1-3 { @include span-columns(1, 3); }
-//   .lg-2-3 { @include span-columns(2, 3); }
-//   .lg-1-4 { @include span-columns(1, 4); }
-//   .lg-2-4 { @include span-columns(2, 4); }
-//   .lg-3-4 { @include span-columns(3, 4); }
-//   .lg-1-5 { @include span-columns(1, 5); }
-//   .lg-2-5 { @include span-columns(2, 5); }
-//   .lg-3-5 { @include span-columns(3, 5); }
-//   .lg-4-5 { @include span-columns(4, 5); }
-//   .lg-1-6 { @include span-columns(1, 6); }
-//   .lg-2-6 { @include span-columns(2, 6); }
-//   .lg-3-6 { @include span-columns(3, 6); }
-//   .lg-4-6 { @include span-columns(4, 6); }
-//   .lg-5-6 { @include span-columns(5, 6); }
-//   .lg-1-7 { @include span-columns(1, 7); }
-//   .lg-2-7 { @include span-columns(2, 7); }
-//   .lg-3-7 { @include span-columns(3, 7); }
-//   .lg-4-7 { @include span-columns(4, 7); }
-//   .lg-5-7 { @include span-columns(5, 7); }
-//   .lg-6-7 { @include span-columns(6, 7); }
-//   .lg-1-8 { @include span-columns(1, 8); }
-//   .lg-2-8 { @include span-columns(2, 8); }
-//   .lg-3-8 { @include span-columns(3, 8); }
-//   .lg-4-8 { @include span-columns(4, 8); }
-//   .lg-5-8 { @include span-columns(5, 8); }
-//   .lg-6-8 { @include span-columns(6, 8); }
-//   .lg-7-8 { @include span-columns(7, 8); }
-//   .lg-1-9 { @include span-columns(1, 9); }
-//   .lg-2-9 { @include span-columns(2, 9); }
-//   .lg-3-9 { @include span-columns(3, 9); }
-//   .lg-4-9 { @include span-columns(4, 9); }
-//   .lg-5-9 { @include span-columns(5, 9); }
-//   .lg-6-9 { @include span-columns(6, 9); }
-//   .lg-7-9 { @include span-columns(7, 9); }
-//   .lg-8-9 { @include span-columns(8, 9); }
-//   .lg-1-10 { @include span-columns(1, 10); }
-//   .lg-2-10 { @include span-columns(2, 10); }
-//   .lg-3-10 { @include span-columns(3, 10); }
-//   .lg-4-10 { @include span-columns(4, 10); }
-//   .lg-5-10 { @include span-columns(5, 10); }
-//   .lg-6-10 { @include span-columns(6, 10); }
-//   .lg-7-10 { @include span-columns(7, 10); }
-//   .lg-8-10 { @include span-columns(8, 10); }
-//   .lg-9-10 { @include span-columns(9, 10); }
-//   .lg-1-11 { @include span-columns(1, 11); }
-//   .lg-2-11 { @include span-columns(2, 11); }
-//   .lg-3-11 { @include span-columns(3, 11); }
-//   .lg-4-11 { @include span-columns(4, 11); }
-//   .lg-5-11 { @include span-columns(5, 11); }
-//   .lg-6-11 { @include span-columns(6, 11); }
-//   .lg-7-11 { @include span-columns(7, 11); }
-//   .lg-8-11 { @include span-columns(8, 11); }
-//   .lg-9-11 { @include span-columns(9, 11); }
-//   .lg-10-11 { @include span-columns(10, 11); }
-//   .lg-1-12 { @include span-columns(1, 12); }
-//   .lg-2-12 { @include span-columns(2, 12); }
-//   .lg-3-12 { @include span-columns(3, 12); }
-//   .lg-4-12 { @include span-columns(4, 12); }
-//   .lg-5-12 { @include span-columns(5, 12); }
-//   .lg-6-12 { @include span-columns(6, 12); }
-//   .lg-7-12 { @include span-columns(7, 12); }
-//   .lg-8-12 { @include span-columns(8, 12); }
-//   .lg-9-12 { @include span-columns(9, 12); }
-//   .lg-10-12 { @include span-columns(10, 12); }
-//   .lg-11-12 { @include span-columns(11, 12); }
+@include breakpoint($lg) {
 
-//   @include generate-grid(1, 'lg', 12);
-// }
+  // .lg-1-2 { @include span(1 of 2); }
+  // .lg-1-3 { @include span(1 of 3); }
+  // .lg-2-3 { @include span(2 of 3); }
+  // .lg-1-4 { @include span(1 of 4); }
+  // .lg-2-4 { @include span(2 of 4); }
+  // .lg-3-4 { @include span(3 of 4); }
+  // .lg-1-5 { @include span(1 of 5); }
+  // .lg-2-5 { @include span(2 of 5); }
+  // .lg-3-5 { @include span(3 of 5); }
+  // .lg-4-5 { @include span(4 of 5); }
+  // .lg-1-6 { @include span(1 of 6); }
+  // .lg-2-6 { @include span(2 of 6); }
+  // .lg-3-6 { @include span(3 of 6); }
+  // .lg-4-6 { @include span(4 of 6); }
+  // .lg-5-6 { @include span(5 of 6); }
+  // .lg-1-7 { @include span(1 of 7); }
+  // .lg-2-7 { @include span(2 of 7); }
+  // .lg-3-7 { @include span(3 of 7); }
+  // .lg-4-7 { @include span(4 of 7); }
+  // .lg-5-7 { @include span(5 of 7); }
+  // .lg-6-7 { @include span(6 of 7); }
+  // .lg-1-8 { @include span(1 of 8); }
+  // .lg-2-8 { @include span(2 of 8); }
+  // .lg-3-8 { @include span(3 of 8); }
+  // .lg-4-8 { @include span(4 of 8); }
+  // .lg-5-8 { @include span(5 of 8); }
+  // .lg-6-8 { @include span(6 of 8); }
+  // .lg-7-8 { @include span(7 of 8); }
+  // .lg-1-9 { @include span(1 of 9); }
+  // .lg-2-9 { @include span(2 of 9); }
+  // .lg-3-9 { @include span(3 of 9); }
+  // .lg-4-9 { @include span(4 of 9); }
+  // .lg-5-9 { @include span(5 of 9); }
+  // .lg-6-9 { @include span(6 of 9); }
+  // .lg-7-9 { @include span(7 of 9); }
+  // .lg-8-9 { @include span(8 of 9); }
+  // .lg-1-10 { @include span(1 of 10); }
+  // .lg-2-10 { @include span(2 of 10); }
+  // .lg-3-10 { @include span(3 of 10); }
+  // .lg-4-10 { @include span(4 of 10); }
+  // .lg-5-10 { @include span(5 of 10); }
+  // .lg-6-10 { @include span(6 of 10); }
+  // .lg-7-10 { @include span(7 of 10); }
+  // .lg-8-10 { @include span(8 of 10); }
+  // .lg-9-10 { @include span(9 of 10); }
+  // .lg-1-11 { @include span(1 of 11); }
+  // .lg-2-11 { @include span(2 of 11); }
+  // .lg-3-11 { @include span(3 of 11); }
+  // .lg-4-11 { @include span(4 of 11); }
+  // .lg-5-11 { @include span(5 of 11); }
+  // .lg-6-11 { @include span(6 of 11); }
+  // .lg-7-11 { @include span(7 of 11); }
+  // .lg-8-11 { @include span(8 of 11); }
+  // .lg-9-11 { @include span(9 of 11); }
+  // .lg-10-11 { @include span(10 of 11); }
+  // .lg-1-12 { @include span(1 of 12); }
+  // .lg-2-12 { @include span(2 of 12); }
+  // .lg-3-12 { @include span(3 of 12); }
+  // .lg-4-12 { @include span(4 of 12); }
+  // .lg-5-12 { @include span(5 of 12); }
+  // .lg-6-12 { @include span(6 of 12); }
+  // .lg-7-12 { @include span(7 of 12); }
+  // .lg-8-12 { @include span(8 of 12); }
+  // .lg-9-12 { @include span(9 of 12); }
+  // .lg-10-12 { @include span(10 of 12); }
+  // .lg-11-12 { @include span(11 of 12); }
+
+  @include generate-grid(1, 'lg', 12);
+}
