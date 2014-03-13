@@ -1,6 +1,8 @@
-$breakpoint-media-output: false;
-$breakpoint-ie-output: true;
-$breakpoint-raw-output: true;
-$breakpoint-no-query-fallbacks: false;
+$supported-browsers: 'ie';
+$debug-browser-support: true;
+
+$breakpoint-no-queries: false;
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
 
 @import 'all';

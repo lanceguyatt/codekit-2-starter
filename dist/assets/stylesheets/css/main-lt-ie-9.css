@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -137,8 +133,7 @@ dfn {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
   box-sizing: border-box;
   height: 0;
 }
@@ -320,8 +315,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -334,8 +327,6 @@ input[type="radio"] {
  *    (include `-moz` to future-proof).
  */
 input[type="search"] {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 2 */
   -webkit-appearance: none;
@@ -379,10 +370,6 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockqu
   padding: 0;
 }
 
-html {
-  font-size: 100%;
-}
-
 body {
   background-color: white;
   color: #333333;
@@ -394,7 +381,7 @@ body {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-@media (min-width: 47.5em) {
+@media (min-width: 48.0625em) {
   body {
     font-size: 1em;
     line-height: 1.5em;
@@ -409,10 +396,6 @@ a {
 }
 a:focus, a:hover, a:active {
   color: #265079;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  background-color: green;
 }
 
 h1 {
@@ -458,6 +441,7 @@ p, ul, ol, dl, table, pre {
   margin-bottom: 1.5em;
 }
 
+span
 ul,
 ol {
   margin-left: 1.5em;
@@ -484,10 +468,9 @@ hr {
 }
 
 .container {
-  background-color: pink;
   padding-left: 0.625em;
   padding-right: 0.625em;
-  max-width: 940px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -496,6 +479,11 @@ hr {
   display: block;
   clear: both;
 }
+@media (min-width: 48.0625em) {
+  .container {
+    max-width: 58.75em;
+  }
+}
 
 .main {
   margin-bottom: 1.5em;
@@ -503,103 +491,313 @@ hr {
 
 .node {
   background-color: #eee;
+  outline: 1px solid #6e6e6e;
   text-align: center;
   margin-bottom: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
 }
+@media (min-width: 35.5625em) {
+  .gallery .node {
+    width: 9.67742%;
+    float: left;
+  }
+  .gallery .node:nth-child(8n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .gallery .node:nth-child(8n + 2) {
+    margin-left: 12.90323%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(8n + 3) {
+    margin-left: 25.80645%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(8n + 4) {
+    margin-left: 38.70968%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(8n + 5) {
+    margin-left: 51.6129%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(8n + 6) {
+    margin-left: 64.51613%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(8n + 7) {
+    margin-left: 77.41935%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(8n + 8) {
+    margin-left: 90.32258%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 48.0625em) {
+  .gallery .node {
+    width: 6.38298%;
+    float: left;
+  }
+  .gallery .node:nth-child(12n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .gallery .node:nth-child(12n + 2) {
+    margin-left: 8.51064%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 3) {
+    margin-left: 17.02128%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 4) {
+    margin-left: 25.53191%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 5) {
+    margin-left: 34.04255%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 6) {
+    margin-left: 42.55319%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 7) {
+    margin-left: 51.06383%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 8) {
+    margin-left: 59.57447%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 9) {
+    margin-left: 68.08511%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 10) {
+    margin-left: 76.59574%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 11) {
+    margin-left: 85.10638%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery .node:nth-child(12n + 12) {
+    margin-left: 93.61702%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
 
-.media .node {
-  outline: 1px solid red;
-  width: 30.43478%;
-  float: left;
-}
-.media .node:nth-child(3n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-.media .node:nth-child(3n + 2) {
-  margin-left: 34.78261%;
-  margin-right: -100%;
-  clear: none;
-}
-.media .node:nth-child(3n + 3) {
-  margin-left: 69.56522%;
-  margin-right: -100%;
-  clear: none;
-}
+@media (min-width: 35.5625em) {
+  .md-1 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 9.67742%;
+    float: left;
+    margin-right: 3.22581%;
+  }
 
-@media (min-width: 47.5em) {
+  .md-2 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 22.58065%;
+    float: left;
+    margin-right: 3.22581%;
+  }
+
+  .md-3 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 35.48387%;
+    float: left;
+    margin-right: 3.22581%;
+  }
+
+  .md-4 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 48.3871%;
+    float: left;
+    margin-right: 3.22581%;
+  }
+
+  .md-5 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 61.29032%;
+    float: left;
+    margin-right: 3.22581%;
+  }
+
+  .md-6 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 74.19355%;
+    float: left;
+    margin-right: 3.22581%;
+  }
+
+  .md-7 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 87.09677%;
+    float: left;
+    margin-right: 3.22581%;
+  }
+
+  .md-8 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 100%;
+    float: left;
+  }
+
+  .omega,
+  .md-omega {
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 48.0625em) {
   .lg-1 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 6.38298%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-2 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 14.89362%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-3 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 23.40426%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-4 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 31.91489%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-5 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 40.42553%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-6 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 48.93617%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-7 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 57.44681%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-8 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 65.95745%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-9 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 74.46809%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-10 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 82.97872%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-11 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 91.48936%;
     float: left;
     margin-right: 2.12766%;
   }
 
   .lg-12 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
     width: 100%;
+    float: left;
+  }
+
+  .lg-1-2 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 42.85714%;
+    float: left;
+    margin-right: 14.28571%;
+  }
+
+  .lg-1-3 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 27.27273%;
+    float: left;
+    margin-right: 9.09091%;
+  }
+
+  .lg-2-3 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 63.63636%;
+    float: left;
+    margin-right: 9.09091%;
+  }
+
+  .lg-1-4 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 20%;
+    float: left;
+    margin-right: 6.66667%;
+  }
+
+  .lg-2-4 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 46.66667%;
+    float: left;
+    margin-right: 6.66667%;
+  }
+
+  .lg-3-4 {
+    /* Capability css3-boxsizing is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.01. */
+    width: 73.33333%;
+    float: left;
+    margin-right: 6.66667%;
   }
 
   .omega,
@@ -608,6 +806,75 @@ hr {
     margin-right: 0;
   }
 }
+@media (min-width: 31.25em) {
+  .foo:after {
+    content: 'medium widths';
+  }
+}
+
+@media (min-width: 30em) {
+  .bar:after {
+    content: 'medium widths measured in ems';
+  }
+}
+
+@media (min-width: 31.25em) and (max-width: 43.75em) {
+  .baz:after {
+    content: 'medium, but not too wide';
+  }
+}
+
+@media (min-height: 18.75em) and (max-height: 43.75em) {
+  .tgif:after {
+    content: 'medium heights';
+  }
+}
+
+@media (min-width: 43.75em) {
+  .omg:after {
+    content: 'kind of wide';
+  }
+}
+
+@media (max-width: 43.75em) {
+  .wtf:after {
+    content: 'not too wide';
+  }
+}
+
+@media (max-width: 43.75em) and (orientation: portrait) {
+  .bbq:after {
+    content: 'wide, portrait';
+  }
+}
+
+@media (max-width: 43.75em) and (orientation: portrait) and (monochrome) {
+  .zztop:after {
+    content: 'wide, portrait, monochrome';
+  }
+}
+
+@media (monochrome) {
+  .csny:after {
+    content: 'monochrome';
+  }
+}
+
+@media (monochrome) {
+  .elp:after {
+    content: 'monochrome, print';
+  }
+}
+print .elp:after {
+  content: 'monochrome, print';
+}
+
+@media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .omgdpr:after {
+    content: 'hi resolutions';
+  }
+}
+
 .nav {
   list-style-image: none;
   list-style-type: none;
@@ -633,12 +900,10 @@ a.active {
 
 a {
   -ms-word-break: break-all;
-  /* Be VERY careful with this, breaks normal words wh_erever */
   word-break: break-all;
-  /* Non standard for webkit */
   word-break: break-word;
-  -moz-hyphens: auto;
+  /* Capability css-hyphens is prefixed with -ms because 10.17334% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -ms context. */
   -ms-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
 }

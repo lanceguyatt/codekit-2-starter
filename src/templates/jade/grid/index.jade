@@ -10,21 +10,22 @@ block main
 
   h2 Grid
 
+  //-
   h3 Default nodes
 
   div(class='clearfix')
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1') 1
-    div(class='node lg-1 omega') 1
+    div(class='node md-4 lg-1') 1
+    div(class='node md-4 md-omega lg-1') 1
+    div(class='node md-4 lg-1') 1
+    div(class='node md-4 md-omega lg-1') 1
+    div(class='node md-4 lg-1') 1
+    div(class='node md-4 md-omega lg-1') 1
+    div(class='node md-4 lg-1') 1
+    div(class='node md-4 md-omega lg-1') 1
+    div(class='node md-4 lg-1') 1
+    div(class='node md-4 md-omega lg-1') 1
+    div(class='node md-4 lg-1') 1
+    div(class='node md-4 md-omega lg-1 lg-omega') 1
 
   div(class='clearfix')
     div(class='node lg-2') 2
@@ -34,51 +35,56 @@ block main
     div(class='node lg-2') 2
     div(class='node lg-2 omega') 2
 
-  div(class='clearfix')
-    div(class='node lg-3') 3
-    div(class='node lg-3') 3
-    div(class='node lg-3') 3
-    div(class='node lg-3 omega') 3
+    div(class='clearfix')
+      div(class='node lg-3') 3
+      div(class='node lg-3') 3
+      div(class='node lg-3') 3
+      div(class='node lg-3 omega') 3
 
-  div(class='clearfix')
-    div(class='node lg-4') 4
-    div(class='node lg-4') 4
-    div(class='node lg-4 omega') 4
+    div(class='clearfix')
+      div(class='node lg-4') 4
+      div(class='node lg-4') 4
+      div(class='node lg-4 omega') 4
 
-  div(class='clearfix')
-    div(class='lg-5 node') 5
-    div(class='lg-7 omega node') 7
+    div(class='clearfix')
+      div(class='lg-5 node') 5
+      div(class='lg-7 node omega') 7
 
-  div(class='clearfix')
-    div(class='lg-6 node') 6
-    div(class='lg-6 omega node') 6
+    div(class='clearfix')
+      div(class='node lg-6') 6
+      div(class='node lg-6 omega') 6
 
-  div(class='clearfix')
-    div(class='lg-7 node') 7
-    div(class='lg-5 omega node') 5
+    div(class='clearfix')
+      div(class='lg-7 node') 7
+      div(class='lg-5 node omega') 5
 
-  div(class='clearfix')
-    div(class='lg-8 node') 8
-    div(class='lg-4 omega node') 4
+    div(class='clearfix')
+      div(class='lg-8 node') 8
+      div(class='lg-4 node omega') 4
 
-  div(class='clearfix')
-    div(class='lg-9 node') 9
-    div(class='lg-3 omega node') 3
+    div(class='clearfix')
+      div(class='lg-9 node') 9
+      div(class='lg-3 node omega') 3
 
-  div(class='clearfix')
-    div(class='lg-10 node') 10
-    div(class='lg-2 omega node') 2
+    div(class='clearfix')
+      div(class='lg-10 node') 10
+      div(class='lg-2 node omega') 2
 
-  div(class='clearfix')
-    div(class='lg-11 node') 11
-    div(class='lg-1 omega node') 1
+    div(class='clearfix')
+      div(class='lg-11 node') 11
+      div(class='lg-1 node omega') 1
 
-  div(class='clearfix')
-    div(class='lg-12 node') 12
+    div(class='clearfix')
+      div(class='lg-12 node') 12
 
   h3 Gallery node
 
-  div(class='media clearfix')
+  div(class='gallery clearfix')
+    div(class='node') 1
+    div(class='node') 1
+    div(class='node') 1
+    div(class='node') 1
+    div(class='node') 1
     div(class='node') 1
     div(class='node') 1
     div(class='node') 1
@@ -278,96 +284,102 @@ block main
     div(class='clearfix')
       div(class='lg-12 lg-centered lg-uncentered opposite node') 12
 
-    h3 Nested nodes
+  h3 Nested nodes
 
-    div(class='clearfix')
-      div(class='lg-2')
-        div(class='node') 2
-        div(class='clearfix')
-          div(class='lg-1-2 node') 1
-          div(class='lg-1-2 omega node') 1
-      div(class='lg-2')
-        div(class='node') 2
-        div(class='clearfix')
-          div(class='lg-1-2 node') 1
-          div(class='lg-1-2 omega node') 1
-      div(class='lg-2')
-        div(class='node') 2
-        div(class='clearfix')
-          div(class='lg-1-2 node') 1
-          div(class='lg-1-2 omega node') 1
-      div(class='lg-2')
-        div(class='node') 2
-        div(class='clearfix')
-          div(class='lg-1-2 node') 1
-          div(class='lg-1-2 omega node') 1
-      div(class='lg-2')
-        div(class='node') 2
-        div(class='clearfix')
-          div(class='lg-1-2 node') 1
-          div(class='lg-1-2 omega node') 1
-      div(class='lg-2 lg-omega')
-        div(class='node') 2
-        div(class='clearfix')
-          div(class='lg-1-2 node') 1
-          div(class='lg-1-2 omega node') 1
+  div(class='clearfix')
+    div(class='lg-2')
+      div(class='node') 2
+      div(class='clearfix')
+        div(class='lg-1-2 node') 1
+        div(class='lg-1-2 node omega') 1
+    div(class='lg-2')
+      div(class='node') 2
+      div(class='clearfix')
+        div(class='lg-1-2 node') 1
+        div(class='lg-1-2 node omega') 1
+    div(class='lg-2')
+      div(class='node') 2
+      div(class='clearfix')
+        div(class='lg-1-2 node') 1
+        div(class='lg-1-2 node omega') 1
+    div(class='lg-2')
+      div(class='node') 2
+      div(class='clearfix')
+        div(class='lg-1-2 node') 1
+        div(class='lg-1-2 node omega') 1
+    div(class='lg-2')
+      div(class='node') 2
+      div(class='clearfix')
+        div(class='lg-1-2 node') 1
+        div(class='lg-1-2 node omega') 1
+    div(class='lg-2 lg-omega')
+      div(class='node') 2
+      div(class='clearfix')
+        div(class='lg-1-2 node') 1
+        div(class='lg-1-2 node omega') 1
 
     div(class='clearfix')
       div(class='lg-3')
         div(class='node') 3
         div(class='clearfix')
           div(class='lg-2-3 node') 2
-          div(class='lg-1-3 omega node') 1
+          div(class='lg-1-3 node omega') 1
       div(class='lg-3')
         div(class='node') 3
         div(class='clearfix')
           div(class='lg-1-3 node') 1
           div(class='lg-1-3 node') 1
-          div(class='lg-1-3 omega node') 1
+          div(class='lg-1-3 node omega') 1
       div(class='lg-3')
         div(class='node') 3
         div(class='clearfix')
           div(class='lg-1-3 node') 1
           div(class='lg-1-3 node') 1
-          div(class='lg-1-3 omega node') 1
+          div(class='lg-1-3 node omega') 1
       div(class='lg-3 omega')
         div(class='node') 3
         div(class='clearfix')
           div(class='lg-1-3 node') 1
           div(class='lg-1-3 node') 1
-          div(class='lg-1-3 omega node') 1
+          div(class='lg-1-3 node omega') 1
 
     div(class='clearfix')
       div(class='lg-4')
         div(class='node') 4
         div(class='clearfix')
           div(class='lg-3-4 node') 3
-          div(class='lg-1-4 omega node') 1
+          div(class='lg-1-4 node omega') 1
       div(class='lg-4')
         div(class='node') 4
         div(class='clearfix')
           div(class='lg-2-4 node') 2
-          div(class='lg-2-4 omega node') 2
+          div(class='lg-2-4 node omega') 2
       div(class='lg-4 omega')
         div(class='node') 4
         div(class='clearfix')
           div(class='lg-1-4 node') 1
           div(class='lg-1-4 node') 1
           div(class='lg-1-4 node') 1
-          div(class='lg-1-4 omega node') 1
-
+          div(class='lg-1-4 node omega') 1
+  //-
     div(class='clearfix')
       div(class='lg-5')
         div(class='node') 5
         div(class='clearfix')
           div(class='lg-4-5 node') 4
+
           div(class='lg-1-5 node omega') 1
-      div(class='lg-1 node') 1
+
+      div(class='node lg-1') 1
+
       div(class='lg-5')
-        div(class='node') 5
+
+        div(class='node', style='background:red') 5
+
         div(class='clearfix')
           div(class='lg-4-5 node') 4
-          div(class='lg-1-5 omega node') 1
+          div(class='lg-1-5 node omega') 1
+
       div(class='lg-1 node omega') 1
 
     div(class='clearfix')

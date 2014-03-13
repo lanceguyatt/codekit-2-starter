@@ -5,7 +5,7 @@ $base-line-height: 8px;
 
 // Text direction
 $text-direction: ltr;
-// $default-float: left !global;
+// $default-float: left;
 // $opposite-direction: right;
 
 // @if $text-direction == ltr {
@@ -33,7 +33,6 @@ $base-font-weight: 300;
 $base-font-style: normal;
 
 // element helpers
-$headings: 'h1, h2, h3, h4, h5, h6';
 $foo: 'p, ul, ol, dl, table, pre';
 $elements-block: elements-of-type(block);
 $elements-inline: elements-of-type(inline);
@@ -44,30 +43,62 @@ $link-color: #4183c4 !default;
 $link-color-hover: darken($link-color, 20) !default;
 $hover: '&:focus, &:hover, &:active';
 
-
-// Susy
-$total-columns: 12;
-$column-width: 60px;
-$gutter-width: 20px;
-
-// $from-direction: $default-float;
-// $omega-float: $opposite-direction;
-
-$susy: (
-  columns: 12,
-  gutters: $gutter-width/$column-width,
-  column-width: $column-width
-);
-
 @import 'compass';
 @import 'compass/layout';
 @import "compass/css3";
+
+// Susy
+$susy: (
+  columns: 4,
+  gutters: 1.25em/3.75em,
+  flow: $text-direction
+);
+
+$sm-layout: (
+  columns: 4
+);
+
+$md-layout: (
+  columns: 8,
+);
+
+$lg-layout: (
+  columns: 12,
+  column-width: 3.75em
+);
+
 @import '../_vendor/susy';
 
-$breakpoint-to-ems: true;
+$breakpoint-wide-portrait: (max-width 700px) (orientation portrait);
 
-$md: 569px;
-$lg: 760px;
+$no-query: '.lt-ie9';
+
+$range: 480px 768px;
+
+$sm-min: min-width 481px;
+$sm-max: max-width 481px;
+
+$md-min: min-width 569px;
+$md-max: max-width 569px;
+
+$lg-min: min-width 769px;
+$lg-max: max-width 769px;
+
+$breakpoint-medium-width: 500px;
+$breakpoint-medium-width-em: 30em;
+// set min-width/max-width if both values are numbers
+$breakpoint-medium-not-wide: 500px 700px;
+// set min/max of feature if there are two numbers
+$breakpoint-medium-height: height 300px 700px;
+// if one value is a string, assume a feature/value pair
+$breakpoint-kind-of-wide: min-width 700px;
+$breakpoint-not-too-wide: max-width 700px;
+// for multidimensional lists, assume each item is a feature value pair
+$breakpoint-wide-portrait: (max-width 700px) (orientation portrait);
+// handle one-sided features (ie. monochrome)
+$breakpoint-wide-portrait-mono: (max-width 700px) (orientation portrait) (monochrome);
+$breakpoint-mono: monochrome;
+$breakpoint-hi-rez: min-resolution 1.5dppx;
 
 @import '../_vendor/breakpoint';
 

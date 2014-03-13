@@ -2,11 +2,16 @@
 @import '_globals/_mixins';
 
 @import '_base/_normalize';
-@import '_base/_fonts';
-@import '_base/_type';
-@import '_base/_layout';
+//@include global-reset;
+//@include nested-reset;
+//@include reset-html5;
+//@include reset-box-model();
 
-@import '_components/_grid';
+@import '_base/_fonts.scss';
+@import '_base/_type.scss';
+@import '_base/_layout.scss';
+
+@import '_components/_grid.scss';
 
 .nav {
   @include no-bullet;
@@ -20,7 +25,11 @@ a.active {
   color: $link-color-hover;
 }
 
-//@import '_vendor/_hashgrid';
+// //@import '_vendor/_hashgrid';
 
-@import '_globals/_placeholders';
+@import '_globals/_placeholders.scss';
+
+
+
+
 

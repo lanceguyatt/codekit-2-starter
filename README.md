@@ -1,4 +1,4 @@
-# CodeKit 2 Starter boilerplate
+# CodeKit 2 Starter boilerplate (Work in Progress)
 
 ## About
 
@@ -11,4 +11,10 @@ Basic boilerplate setup for [CodeKit 2](http://incident57.com/codekit/) featurin
 * [Markdown](http://daringfireball.net/projects/markdown/)
 * [Modernizr](http://modernizr.com/)
 * [Sass](http://sass-lang.com/)
-* [Susy 2](http://susy.oddbird.net/)
+
+Compass plugins:
+* [Susy](http://susy.oddbird.net/)
+
+Sass plugins:
+* [Breakpoint](http://breakpoint-sass.com/)
+

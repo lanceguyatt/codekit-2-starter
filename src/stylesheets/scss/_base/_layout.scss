@@ -1,7 +1,10 @@
 .container {
-  background-color: pink;
-  @include gutters(1.25em inside);
-  @include container(12 magic);
+  @include gutter(1.25em inside);
+  @include container();
+
+  @include susy-breakpoint($lg-min, $lg-layout) {
+    max-width: container();
+  }
 }
 
 .main {

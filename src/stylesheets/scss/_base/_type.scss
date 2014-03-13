@@ -1,12 +1,13 @@
+//#{elements-of-type(block) } {
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
   direction: $text-direction;
   margin: 0;
   padding: 0;
 }
 
-html {
-  font-size: 100%;
-}
+// html {
+//   font-size: 100%;
+// }
 
 body {
   background-color: $base-background;
@@ -18,13 +19,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @include adjust-font-size-to(14px);
 
-  @include breakpoint($lg) {
+  @include susy-breakpoint($lg-min, $lg-layout) {
     @include adjust-font-size-to(16px);
   }
 }
 
 a {
-  @extend %break-word;
+  @extend %break-word !optional;
   color: $link-color;
   text-decoration: none;
   transition: color .25s;
@@ -35,9 +36,9 @@ a {
   }
 }
 
-#{headings(all)} {
-  background-color: green;
-}
+// #{headings(all)} {
+//   background-color: green;
+// }
 
 h1 {
   $font-size: 32px;
@@ -75,6 +76,9 @@ h6 {
   @include margin-trailer(1, $font-size);
 }
 
+
+
+
 #{$foo} {
   @include margin-trailer(2);
 
@@ -85,6 +89,7 @@ h6 {
   //}
 }
 
+span
 ul,
 ol {
   margin-left: rhythm(3);
@@ -107,6 +112,6 @@ hr {
 }
 
 .clearfix {
-  @extend %pie-clearfix;
+  @extend %pie-clearfix !optional;
   position: relative;
 }

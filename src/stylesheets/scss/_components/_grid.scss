@@ -18,109 +18,149 @@
 // //   }
 // // }
 
+// //
+// // Grid mixins
+// //
+// @mixin generate-grid($grid-id, $class: 'span', $total-columns: $total-columns, $column-width: $column-width, $gutter-width: $gutter-width) {
+
+//   // Generate span clearfix i.e .large-1
+//   @for $i from 1 through $total-columns {
+
+//     .#{$class}#{-$i} {
+//       @if $i == $total-columns {
+//         width: span($total-columns);
+//       } @else {
+//         @include span($i);
+//       }
+//     }
+//   }
+
+//   // // Generate push columns i.e .large-push-1
+//   // @for $i from 1 through $total-columns - 1 {
+//   //   .#{$class}-push#{-$i} {
+//   //     @include push(#{$i} of #{$total-columns});
+//   //   }
+//   // }
+
+//   // // // Generate pull columns i.e .large-pull-1
+//   // @for $i from 1 through $total-columns - 1 {
+//   //   .#{$class}-pull#{-$i} {
+//   //     @include pull($i of $total-columns);
+//   //   }
+//   // }
+
+//   // Generate omega class i.e .large-omega
+//   .omega,
+//   .#{$class}-omega {
+//     @include omega;
+//   }
+
+//   // Generate show class i.e .large-show
+//   // .#{$size}-show {
+//   //   display: block;
+//   // }
+
+//   // Generate hide class i.e large-hide
+//   // .#{$size}-hide {
+//   //   display: none;
+//   // }
+
+//   // Generate centered class ie. large-centered
+//   // .#{$class}-centered {
+//   //   margin-left: auto;
+//   //   margin-right: auto;
+//   //   position: relative;
+//   //   @include float('none !important');
+//   // }
+
+//   // Generate centered class ie. large-uncentered
+//   // .#{$class}-uncentered {
+//   //   margin-left: 0;
+//   //   margin-right: 0;
+//   //   @include float('#{$default-float} !important');
+//   // }
+
+//   // Generate centered class ie. large-uncentered.opposite
+//   // .#{$class}-uncentered.opposite {
+//   //   @include float('#{$omega-float} !important');
+//   // }
+
+//   // .#{$class}-text-left {
+//   //   text-align: #{$default-float} !important;
+//   // }
+
+//   // .#{$class}-text-right {
+//   //   text-align: #{$opposite-direction} !important;
+//   // }
+
+//   // .#{$class}-text-center {
+//   //   text-align: center !important;
+//   // }
+
+//   //@include generate-hashgrid($grid-id, $total-clearfix, $column-width, $gutter-width, $grid-padding);
+// }
+
 .node {
+
   background-color: #eee;
+  outline: 1px solid darken(#eee, 50);
   text-align: center;
   @include margin-trailer(2);
   @include padding-leader(2);
   @include padding-trailer(2);
-}
+  @include susy-breakpoint($md-min, $md-layout) {
 
-// //
-// // Grid mixins
-// //
-@mixin generate-grid($grid-id, $class: 'span', $total-columns: $total-columns, $column-width: $column-width, $gutter-width: $gutter-width) {
-
-  // Generate span clearfix i.e .large-1
-  @for $i from 1 through $total-columns {
-
-    .#{$class}#{-$i} {
-      @if $i == $total-columns {
-        width: span($total-columns);
-      } @else {
-        @include span($i);
-      }
+    .gallery & {
+      @include gallery(1);
     }
   }
 
-  // // Generate push columns i.e .large-push-1
-  // @for $i from 1 through $total-columns - 1 {
-  //   .#{$class}-push#{-$i} {
-  //     @include push(#{$i} of #{$total-columns});
-  //   }
-  // }
+  @include susy-breakpoint($lg-min, $lg-layout) {
 
-  // // // Generate pull columns i.e .large-pull-1
-  // @for $i from 1 through $total-columns - 1 {
-  //   .#{$class}-pull#{-$i} {
-  //     @include pull($i of $total-columns);
-  //   }
-  // }
+    .gallery & {
+      @include gallery(1);
+    }
+  }
+}
 
-  // Generate omega class i.e .large-omega
+@include susy-breakpoint($md-min, $md-layout) {
+
+  .md-1 { @include span(1); }
+  .md-2 { @include span(2); }
+  .md-3 { @include span(3); }
+  .md-4 { @include span(4); }
+  .md-5 { @include span(5); }
+  .md-6 { @include span(6); }
+  .md-7 { @include span(7); }
+  .md-8 { @include span(8); }
+
   .omega,
-  .#{$class}-omega {
+  .md-omega {
     @include omega;
   }
-
-  // Generate show class i.e .large-show
-  // .#{$size}-show {
-  //   display: block;
-  // }
-
-  // Generate hide class i.e large-hide
-  // .#{$size}-hide {
-  //   display: none;
-  // }
-
-  // Generate centered class ie. large-centered
-  // .#{$class}-centered {
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   position: relative;
-  //   @include float('none !important');
-  // }
-
-  // Generate centered class ie. large-uncentered
-  // .#{$class}-uncentered {
-  //   margin-left: 0;
-  //   margin-right: 0;
-  //   @include float('#{$default-float} !important');
-  // }
-
-  // Generate centered class ie. large-uncentered.opposite
-  // .#{$class}-uncentered.opposite {
-  //   @include float('#{$omega-float} !important');
-  // }
-
-  // .#{$class}-text-left {
-  //   text-align: #{$default-float} !important;
-  // }
-
-  // .#{$class}-text-right {
-  //   text-align: #{$opposite-direction} !important;
-  // }
-
-  // .#{$class}-text-center {
-  //   text-align: center !important;
-  // }
-
-  //@include generate-hashgrid($grid-id, $total-clearfix, $column-width, $gutter-width, $grid-padding);
 }
 
-.media .node {
-  outline: 1px solid red;
-  @include gallery(2 of 6 magic);
-}
+@include susy-breakpoint($lg-min, $lg-layout) {
 
-@include breakpoint($lg) {
+  .lg-1 { @include span(1); }
+  .lg-2 { @include span(2); }
+  .lg-3 { @include span(3); }
+  .lg-4 { @include span(4); }
+  .lg-5 { @include span(5); }
+  .lg-6 { @include span(6); }
+  .lg-7 { @include span(7); }
+  .lg-8 { @include span(8); }
+  .lg-9 { @include span(9); }
+  .lg-10 { @include span(10); }
+  .lg-11 { @include span(11); }
+  .lg-12 { @include span(12); }
 
-  // .lg-1-2 { @include span(1 of 2); }
-  // .lg-1-3 { @include span(1 of 3); }
-  // .lg-2-3 { @include span(2 of 3); }
-  // .lg-1-4 { @include span(1 of 4); }
-  // .lg-2-4 { @include span(2 of 4); }
-  // .lg-3-4 { @include span(3 of 4); }
+  .lg-1-2 { @include span(1 of 2); }
+  .lg-1-3 { @include span(1 of 3); }
+  .lg-2-3 { @include span(2 of 3); }
+  .lg-1-4 { @include span(1 of 4); }
+  .lg-2-4 { @include span(2 of 4); }
+  .lg-3-4 { @include span(3 of 4); }
   // .lg-1-5 { @include span(1 of 5); }
   // .lg-2-5 { @include span(2 of 5); }
   // .lg-3-5 { @include span(3 of 5); }
@@ -182,5 +222,79 @@
   // .lg-10-12 { @include span(10 of 12); }
   // .lg-11-12 { @include span(11 of 12); }
 
-  @include generate-grid(1, 'lg', 12);
+  //@include generate-grid(1, 'lg', 12);
+
+  .omega,
+  .lg-omega {
+    @include omega;
+  }
 }
+
+.foo {
+  @include breakpoint($breakpoint-medium-width) {
+    &:after {content: 'medium widths';}
+  }
+}
+
+.bar {
+  @include breakpoint($breakpoint-medium-width-em) {
+    &:after {content: 'medium widths measured in ems';}
+  }
+}
+
+.baz {
+  @include breakpoint($breakpoint-medium-not-wide) {
+    &:after {content: 'medium, but not too wide';}
+  }
+}
+
+.tgif {
+  @include breakpoint($breakpoint-medium-height) {
+     &:after {content: 'medium heights';}
+  }
+}
+
+.omg {
+  @include breakpoint($breakpoint-kind-of-wide) {
+    &:after {content: 'kind of wide';}
+  }
+}
+
+.wtf {
+  @include breakpoint($breakpoint-not-too-wide) {
+    &:after {content: 'not too wide';}
+  }
+}
+
+.bbq {
+  @include breakpoint($breakpoint-wide-portrait) {
+    &:after {content: 'wide, portrait';}
+  }
+}
+
+.zztop {
+  @include breakpoint($breakpoint-wide-portrait-mono) {
+    &:after {content: 'wide, portrait, monochrome';}
+  }
+}
+
+.csny {
+  @include breakpoint($breakpoint-mono) {
+    &:after {content: 'monochrome';}
+  }
+}
+
+.elp {
+  @include breakpoint($breakpoint-mono, print) {
+    &:after { content: 'monochrome, print'; }
+  }
+}
+
+.omgdpr {
+  @include breakpoint($breakpoint-hi-rez) {
+    &:after {
+      content: 'hi resolutions';
+    }
+  }
+}
+
